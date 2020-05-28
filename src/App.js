@@ -1,24 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import 'emerald-ui/lib/styles.css';
+import Header from './components/header';
+import Notice from './components/notice';
+import NewsContainer from './components/newsContainer';
+import Buttons from './components/buttons';
+import './css/main.css';
+import Subscribe from './components/subscribe/subscribe';
 
 function App() {
+  const [count, setCount] = useState(1);
+  const handleClickShowMoreNew = () => {
+    setCount(count + 1);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <Header />
+      <section className="main">
+        <section className="container">
+          <Notice />
+          <h1>Top news</h1>
+          <section className="news">
+            <NewsContainer count={count} />
+          </section>
+          <section className="section-button">
+            <Buttons
+              color="primary"
+              text="View more stories"
+              onClick={handleClickShowMoreNew}
+            />
+          </section>
+          <Subscribe />
+        </section>
+      </section>
     </div>
   );
 }

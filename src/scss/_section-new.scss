@@ -1,0 +1,32 @@
+.img-new {
+  max-height: 150px;
+  position: relative;
+  text-align: center;
+}
+
+.img-new img {
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+}
+
+.titular {
+  margin: 1em 0;
+  text-align: justify;
+  position: relative;
+  height: 90px;
+  overflow: hidden;
+}
+
+.summary {
+  position: relative;
+  bottom: 0;
+  max-height: 198px;
+  overflow: hidden;
+
+  p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 198px;
+  }
+}
