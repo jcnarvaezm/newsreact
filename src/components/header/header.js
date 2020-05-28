@@ -10,7 +10,7 @@ import {
 import newsLogo from '../../img/logo-2.svg';
 const Header = () => {
   return (
-    <Navbar breakAt="xs" theme="light">
+    <Navbar breakAt="xs" theme="light" barClassName="container">
       <Navbar.Brand>
         <a href="#foo">
           <img src={newsLogo} alt="News" />

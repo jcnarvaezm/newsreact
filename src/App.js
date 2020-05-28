@@ -7,6 +7,7 @@ import NewsContainer from './components/newsContainer';
 import Buttons from './components/buttons';
 import './css/main.css';
 import Subscribe from './components/subscribe/subscribe';
+import FormContainer from './components/formContainer';
 
 function App() {
   const [count, setCount] = useState(1);
@@ -30,8 +31,9 @@ function App() {
               onClick={handleClickShowMoreNew}
             />
           </section>
-          <Subscribe />
         </section>
+        <Subscribe />
+        <FormContainer />
       </section>
     </div>
   );

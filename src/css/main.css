@@ -1,6 +1,7 @@
 .main {
-  margin-top: 1em;
+  margin-top: 25px;
 }
+
 .img-new {
   min-height: 150px;
   max-height: 150px;
@@ -11,12 +12,13 @@
   max-height: 150px;
   width: auto;
   height: 100%;
+  max-width: 100%;
 }
 .titular {
   margin: 1em 0;
   text-align: justify;
   position: relative;
-  height: 90px;
+  height: 100px;
   overflow: hidden;
 }
 .summary {
@@ -37,9 +39,58 @@
   font-weight: 600;
   letter-spacing: -0.08px;
   line-height: 19px;
+  margin-top: 35px;
+  margin-bottom: 81px;
 }
 .section-button button {
   width: 170px;
   height: 39px;
+}
+.banner {
+  background-image: url('../img/22589-1-2x.jpg');
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+.banner-suscribe-text {
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
+}
+.banner-suscribe-text h2 {
+  color: #fff;
+  font-size: 2em;
+}
+.banner-suscribe-text p {
+  margin: 1.5em auto;
+}
+.btn-subscribe {
+  background: transparent !important;
+  color: #fff !important;
+  text-shadow: 1px 1px 3px #000 !important;
+  box-sizing: border-box;
+  height: 40px;
+  width: 147px;
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+}
+.section-form {
+  margin-top: 66px;
+}
+.section-form h2 {
+  color: #1d2121;
+  font-family: 'Open Sans';
+  font-size: 30px;
+  letter-spacing: -0.16px;
+  line-height: 41px;
+  text-align: center;
+}
+.form-container {
+  margin-top: 23px;
+  margin-bottom: 106px;
 }
 /*# sourceMappingURL=main.css.map */

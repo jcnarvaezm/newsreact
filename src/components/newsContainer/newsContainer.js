@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Panel, Row, Col, Button } from 'emerald-ui/lib/';
+import React from 'react';
+import { Panel, Row, Col } from 'emerald-ui/lib/';
 import News from '../news';
 import useFetch from '../../controllers/useFetch';
 
@@ -9,7 +9,6 @@ const NewsContainer = (props) => {
     `http://newsapi.org/v2/everything?q=bitcoin&from=2020-04-28&sortBy=publishedAt&apiKey=b9c5c16a422d4b7b90accf49eed04cbc`,
     {}
   );
-  console.log(count);
   return (
     <Panel>
       <Panel.Body>
