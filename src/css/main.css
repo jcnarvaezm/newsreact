@@ -42,7 +42,8 @@
   margin-top: 35px;
   margin-bottom: 81px;
 }
-.section-button button {
+.section-button button,
+.field-section button {
   width: 170px;
   height: 39px;
 }
@@ -93,4 +94,12 @@
   margin-top: 23px;
   margin-bottom: 106px;
 }
-/*# sourceMappingURL=main.css.map */
+.email-text-field div input {
+  height: 88px;
+}
+.field-section {
+  margin-top: 46px;
+}
+.field-section-btn {
+  text-align: center;
+}

@@ -17,9 +17,8 @@ const NewsContainer = (props) => {
           {Object.values(newsData).map(
             (news, index) =>
               index < count * 4 && (
-                <Col xs={12} sm={6}>
+                <Col xs={12} sm={6} key={index}>
                   <News
-                    key={index}
                     title={news.title}
                     image={news.urlToImage}
                     summary={news.description}
