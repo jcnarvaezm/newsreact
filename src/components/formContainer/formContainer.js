@@ -1,53 +1,66 @@
 import React, { useRef } from 'react';
-import { Panel, Row, Col, TextField, Checkbox, Button } from 'emerald-ui/lib/';
+import { Panel, Row, Col, TextField, Checkbox } from 'emerald-ui/lib/';
+import ModalForm from '../modalForm';
+import { Provider } from 'react-redux';
+import store from '../../redux/store';
 
-const FormContainer = (props) => {
-  const firstname = useRef();
-  const lastname = useRef();
-  const email = useRef();
+const FormContainer = () => {
   const phonenumber = useRef();
-  const emailtext = useRef();
-  const chkaccept = useRef();
-
-  const handleClickSendForm = (e) => {
+  const email = useRef();
+  const handleSubmitForm = (e) => {
     e.preventDefault();
-    console.log(firstname);
+    return {
+      type: 'SEND',
+      payload: {
+        firstname: e.target[0].value,
+      },
+    };
+    /*console.log(e.target[0].value);
+    console.log(phonenumber.current.state.value);*/
   };
+
   return (
     <section className="section-form">
       <h2>Contact Us</h2>
       <Panel className="container form-container">
         <Panel.Body>
-          <Row>
-            <Col xs={12} sm={6} className="field-section">
-              <TextField label="First name" ref={firstname} />
-            </Col>
-            <Col xs={12} sm={6} className="field-section">
-              <TextField label="Last name" ref={lastname} />
-            </Col>
-            <Col xs={12} sm={6} className="field-section">
-              <TextField label="Email" ref={email} />
-            </Col>
-            <Col xs={12} sm={6} className="field-section">
-              <TextField label="Phone number" ref={phonenumber} />
-            </Col>
-            <Col xs={12} className="field-section">
-              <TextField
-                label="Email"
-                role="textbox"
-                className="email-text-field"
-                ref={emailtext}
-              />
-            </Col>
-            <Col xs={12} className="field-section">
-              <Checkbox label="Send me emails about breaking news and promotions." />
-            </Col>
-            <Col xs={12} className="field-section field-section-btn">
-              <Button color="primary" onClick={handleClickSendForm}>
-                <span>Submit form</span>
-              </Button>
-            </Col>
-          </Row>
+          <form onSubmit={handleSubmitForm}>
+            <Row>
+              <Col xs={12} sm={6} className="field-section">
+                <TextField label="First name" />
+              </Col>
+              <Col xs={12} sm={6} className="field-section">
+                <TextField label="Last name" />
+              </Col>
+              <Col xs={12} sm={6} className="field-section">
+                <TextField label="Email" ref={email} />
+              </Col>
+              <Col xs={12} sm={6} className="field-section">
+                <TextField
+                  label="Phone number"
+                  ref={phonenumber}
+                  type="number"
+                  maxLength="10"
+                />
+              </Col>
+              <Col xs={12} className="field-section">
+                <TextField
+                  label="Email"
+                  role="textbox"
+                  className="email-text-field"
+                />
+              </Col>
+              <Col xs={12} className="field-section">
+                <Checkbox label="Send me emails about breaking news and promotions." />
+              </Col>
+              <Col xs={12} className="field-section section-button">
+                <button type="submit">Submit form</button>
+              </Col>
+            </Row>
+          </form>
+          <Provider store={store}>
+            <ModalForm name="jonathan test" />
+          </Provider>
         </Panel.Body>
       </Panel>
     </section>

@@ -46,6 +46,10 @@
 .field-section button {
   width: 170px;
   height: 39px;
+  border: 1px solid #0073e9;
+  color: #fff;
+  border-radius: 2px;
+  background-color: #0073e9;
 }
 .banner {
   background-image: url('../img/22589-1-2x.jpg');
