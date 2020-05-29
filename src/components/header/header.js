@@ -4,7 +4,6 @@ import {
   Nav,
   DropdownButton,
   DropdownItem,
-  Icon,
   Avatar,
 } from 'emerald-ui/lib/';
 import newsLogo from '../../img/logo-2.svg';
@@ -20,24 +19,24 @@ const Header = () => {
       <Nav grow collapsible>
         <DropdownButton title="Sections" id="dd1">
           <DropdownItem eventKey="1">
-            <Icon name="email" />
-            Action
+            <i className="fas fa-football-ball"></i>
+            Sport
           </DropdownItem>
           <DropdownItem eventKey="2">
-            <Icon name="email" />
-            Another action
+            <i class="fas fa-film"></i>
+            Entertainment
           </DropdownItem>
           <DropdownItem eventKey="3">
-            <Icon name="email" />
-            Active Item
+            <i class="fas fa-users"></i>
+            Social
           </DropdownItem>
           <DropdownItem eventKey="3">
-            <Icon name="email" />
-            Active Item
+            <i class="fas fa-heartbeat"></i>
+            Health
           </DropdownItem>
           <DropdownItem eventKey="3">
-            <Icon name="email" />
-            Active Item
+            <i class="fas fa-mobile-alt"></i>
+            Technology
           </DropdownItem>
         </DropdownButton>
         <a href="#foo">Editorials</a>
