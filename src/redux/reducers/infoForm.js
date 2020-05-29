@@ -20,6 +20,7 @@ const infoForm = (state = initalState, action) => {
         phonenumber: action.payload.phonenumber,
         email: action.payload.email,
         emailtext: action.payload.emailtext,
+        chksendme: action.payload.chksendme,
         show: action.payload.show,
       };
     case CLOSE:

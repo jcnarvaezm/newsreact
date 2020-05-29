@@ -19,6 +19,13 @@ const FormContainer = (props) => {
     });
   };
 
+  const hableClickChkSendMe = (e) => {
+    setFormData({
+      ...formData,
+      chksendme: e.target.checked,
+    });
+  };
+
   const inputValidator = (inputName, formData) => {
     if (inputsController(inputName, formData)) {
       showToast.push({
@@ -72,6 +79,7 @@ const FormContainer = (props) => {
       phonenumber: formData.phonenumber,
       email: formData.email,
       emailtext: formData.emailtext,
+      chksendme: formData.chksendme,
       show: true,
       showToast: false,
     };
@@ -132,7 +140,9 @@ const FormContainer = (props) => {
             <Col xs={12} className="field-section">
               <Checkbox
                 label="Send me emails about breaking news and promotions."
-                onChange={handleChangeInput}
+                onChange={hableClickChkSendMe}
+                value={formData.chksendme}
+                name="chksendme"
               />
             </Col>
             <Col xs={12} className="field-section section-button">
@@ -174,6 +184,7 @@ const mapDispatchToProps = (dispatch) => {
       email,
       phonenumber,
       emailtext,
+      chksendme,
       show,
       showToast,
     }) =>
@@ -185,6 +196,7 @@ const mapDispatchToProps = (dispatch) => {
           email,
           phonenumber,
           emailtext,
+          chksendme,
           show,
           showToast,
         },

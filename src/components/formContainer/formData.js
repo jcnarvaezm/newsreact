@@ -4,4 +4,5 @@ export const InitialStateformData = {
   phonenumber: '',
   email: '',
   emailtext: '',
+  chksendme: false,
 };
