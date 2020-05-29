@@ -27,7 +27,7 @@ const FormContainer = (props) => {
   };
 
   const inputValidator = (inputName, formData) => {
-    if (inputsController(inputName, formData)) {
+    if (inputsController(formData)) {
       showToast.push({
         inputName,
         messageCase: 1,
@@ -170,13 +170,13 @@ const FormContainer = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
   return {
     infoForm: state,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
     send: ({
       firstname,

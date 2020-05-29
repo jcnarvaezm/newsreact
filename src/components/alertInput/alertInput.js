@@ -36,13 +36,13 @@ const AlertInput = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
   return {
     infoForm: state,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
     close: (showToast) =>
       dispatch({

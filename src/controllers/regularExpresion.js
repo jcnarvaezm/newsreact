@@ -4,15 +4,7 @@ const RegularExpresion = (input, textInput) => {
       if (/^([0-9]{10})$/.test(textInput)) {
         return false;
       } else {
-        if (!/^3/.test(textInput)) {
-          return true;
-        } else if (textInput.length > 10) {
-          return true;
-        } else if (textInput.length < 10) {
-          return true;
-        } else {
-          return true;
-        }
+        return true;
       }
 
     case 'email':
@@ -35,7 +27,7 @@ const RegularExpresion = (input, textInput) => {
       }
 
     default:
-      break;
+      return null;
   }
 };
 
