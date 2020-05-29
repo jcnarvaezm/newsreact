@@ -1,11 +1,4 @@
-import {
-  SEND,
-  CLOSE,
-  CLOSETOAST,
-  /*UPDATE_EMAIL,
-  UPDATE_PHONENUMBER,
-  */
-} from '../actions/infoFormActions';
+import { SEND, CLOSE, CLOSETOAST } from '../actions/infoFormActions';
 
 const initalState = {
   firstname: '',
@@ -39,16 +32,6 @@ const infoForm = (state = initalState, action) => {
         ...state,
         showToast: action.payload.showToast,
       };
-    /*
-    case UPDATE_EMAIL:
-      return {
-        ...state,
-      };
-    case UPDATE_PHONENUMBER:
-      return {
-        ...state,
-      };
-    */
     default:
       return state;
   }

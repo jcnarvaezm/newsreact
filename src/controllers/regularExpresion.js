@@ -38,24 +38,5 @@ const RegularExpresion = (input, textInput) => {
       break;
   }
 };
-/*
-const notNullOrSpace = (input, textInput) => {
-  if (textInput === null || textInput.length === 0 || /^\s+$/.test(textInput)) {
-    return false;
-  } else {
-    return true;
-  }
-};
 
-function addCssError(input) {
-  $(`.${input}`).removeClass('has-success');
-  $(`.${input}`).addClass('has-error');
-  $(`#${input}`).css({ border: 'solid 1px red', color: 'red' });
-}
-function addCssSuccess(input) {
-  $(`.${input}`).removeClass('has-error');
-  $(`.${input}`).addClass('has-success');
-  $(`#${input}`).css({ border: 'solid 1px #ccc', color: 'black' });
-}
-*/
 export default RegularExpresion;
