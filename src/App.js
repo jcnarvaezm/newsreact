@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
+
 import { Provider } from 'react-redux';
-import './App.css';
+import store from './redux/store';
+
 import 'emerald-ui/lib/styles.css';
+
 import Header from './components/header';
 import Notice from './components/notice';
 import NewsContainer from './components/newsContainer';
 import Buttons from './components/buttons';
-import './css/main.css';
 import Subscribe from './components/subscribe/subscribe';
 import FormContainer from './components/formContainer';
 import ModalForm from './components/modalForm';
-import store from './redux/store';
+
+import './css/main.css';
 
 function App() {
   const [count, setCount] = useState(1);
   const handleClickShowMoreNew = () => {
     setCount(count + 1);
   };
+
   return (
     <div className="">
       <Header />

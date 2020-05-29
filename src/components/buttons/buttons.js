@@ -12,4 +12,5 @@ const Buttons = (props) => {
     </section>
   );
 };
+
 export default Buttons;

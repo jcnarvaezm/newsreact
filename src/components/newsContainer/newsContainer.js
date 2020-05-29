@@ -9,6 +9,7 @@ const NewsContainer = (props) => {
     `http://newsapi.org/v2/everything?q=bitcoin&from=2020-04-28&sortBy=publishedAt&apiKey=b9c5c16a422d4b7b90accf49eed04cbc`,
     {}
   );
+
   return (
     <Panel>
       <Panel.Body>
@@ -32,4 +33,5 @@ const NewsContainer = (props) => {
     </Panel>
   );
 };
+
 export default NewsContainer;

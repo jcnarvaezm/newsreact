@@ -2,12 +2,9 @@ import {
   SEND,
   CLOSE,
   CLOSETOAST,
-  /*UPDATE_FIRSTNAME,
-  UPDATE_LASTNAME,
-  UPDATE_EMAIL,
+  /*UPDATE_EMAIL,
   UPDATE_PHONENUMBER,
-  UPDATE_EMAILTEXT,
-  UPDATE_CHKSENDME,*/
+  */
 } from '../actions/infoFormActions';
 
 const initalState = {
@@ -42,14 +39,7 @@ const infoForm = (state = initalState, action) => {
         ...state,
         showToast: action.payload.showToast,
       };
-    /*case UPDATE_FIRSTNAME:
-      return {
-        ...state,
-      };
-    case UPDATE_LASTNAME:
-      return {
-        ...state,
-      };
+    /*
     case UPDATE_EMAIL:
       return {
         ...state,
@@ -58,14 +48,7 @@ const infoForm = (state = initalState, action) => {
       return {
         ...state,
       };
-    case UPDATE_EMAILTEXT:
-      return {
-        ...state,
-      };
-    case UPDATE_CHKSENDME:
-      return {
-        ...state,
-      };*/
+    */
     default:
       return state;
   }

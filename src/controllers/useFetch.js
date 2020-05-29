@@ -13,6 +13,8 @@ const useFetch = (url, initialState = []) => {
         setFetchin(false);
       });
   }, [url]);
+
   return [dataNews, isFetching];
 };
+
 export default useFetch;

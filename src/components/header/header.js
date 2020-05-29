@@ -8,6 +8,7 @@ import {
   Avatar,
 } from 'emerald-ui/lib/';
 import newsLogo from '../../img/logo-2.svg';
+
 const Header = () => {
   return (
     <Navbar breakAt="xs" theme="light" barClassName="container">
@@ -53,4 +54,5 @@ const Header = () => {
     </Navbar>
   );
 };
+
 export default Header;

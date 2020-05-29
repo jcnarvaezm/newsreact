@@ -1,28 +1,15 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Panel, Row, Col, TextField, Checkbox } from 'emerald-ui/lib/';
 import { connect } from 'react-redux';
-import { send } from '../../redux/actions/infoFormActions';
 import inputsController from '../../controllers/inputsController';
 import AlertInput from '../alertInput/alertInput';
+import { InitialStateformData } from './formData';
 
 const FormContainer = (props) => {
-  const firstnameREF = useRef();
-  const lastnameREF = useRef();
-  const phonenumberREF = useRef();
-  const emailREF = useRef();
-  const emailtextREF = useRef();
-  const chksendmeREF = useRef();
-
   const [toasts, setToasts] = useState([]);
   const showToast = [];
 
-  const [formData, setFormData] = useState({
-    firstname: '',
-    lastname: '',
-    phonenumber: '',
-    email: '',
-    emailtext: '',
-  });
+  const [formData, setFormData] = useState(InitialStateformData);
 
   const handleChangeInput = (e) => {
     setFormData({
@@ -30,6 +17,7 @@ const FormContainer = (props) => {
       [e.target.name]: e.target.value,
     });
   };
+
   const inputValidator = (inputName, formData) => {
     if (inputsController(inputName, formData)) {
       showToast.push({
@@ -40,23 +28,30 @@ const FormContainer = (props) => {
       props.closeToast(true);
     }
   };
+
   const handleSubmitForm = (e) => {
     e.preventDefault();
+
+    let isToastTrue = false;
+
     inputValidator('firstname', formData.firstname);
     inputValidator('lastname', formData.lastname);
     inputValidator('phonenumber', formData.phonenumber);
     inputValidator('email', formData.email);
     inputValidator('emailtext', formData.emailtext);
-    let val = false;
+
     showToast.map((toast, index) => {
       if (toast.show === true) {
-        val = true;
+        isToastTrue = true;
       }
     });
+
     setToasts(showToast);
-    if (val) {
+
+    if (isToastTrue) {
       return;
     }
+
     const info = {
       firstname: formData.firstname,
       lastname: formData.lastname,
@@ -66,6 +61,7 @@ const FormContainer = (props) => {
       show: true,
       showToast: false,
     };
+
     props.send(info);
   };
 
@@ -78,7 +74,6 @@ const FormContainer = (props) => {
             <Col xs={12} sm={6} className="field-section">
               <TextField
                 label="First name"
-                ref={firstnameREF}
                 onChange={handleChangeInput}
                 name="firstname"
                 value={formData.firstname}
@@ -87,7 +82,6 @@ const FormContainer = (props) => {
             <Col xs={12} sm={6} className="field-section">
               <TextField
                 label="Last name"
-                ref={lastnameREF}
                 onChange={handleChangeInput}
                 name="lastname"
                 value={formData.lastname}
@@ -96,7 +90,6 @@ const FormContainer = (props) => {
             <Col xs={12} sm={6} className="field-section">
               <TextField
                 label="Email"
-                ref={emailREF}
                 onChange={handleChangeInput}
                 name="email"
                 value={formData.email}
@@ -105,7 +98,6 @@ const FormContainer = (props) => {
             <Col xs={12} sm={6} className="field-section">
               <TextField
                 label="Phone number"
-                ref={phonenumberREF}
                 type="number"
                 onChange={handleChangeInput}
                 maxLength="10"
@@ -118,7 +110,6 @@ const FormContainer = (props) => {
                 label="Email"
                 role="textbox"
                 className="email-text-field"
-                ref={emailtextREF}
                 onChange={handleChangeInput}
                 name="emailtext"
                 value={formData.emailtext}
@@ -136,17 +127,19 @@ const FormContainer = (props) => {
               </button>
             </Col>
           </Row>
-          {toasts.map(
-            (toast, index) =>
-              toast.show && (
-                <AlertInput
-                  key={index}
-                  show={true}
-                  inputName={toast.inputName}
-                  messageCase={toast.messageCase}
-                />
-              )
-          )}
+          <section>
+            {toasts.map(
+              (toast, index) =>
+                toast.show && (
+                  <AlertInput
+                    key={index}
+                    show={true}
+                    inputName={toast.inputName}
+                    messageCase={toast.messageCase}
+                  />
+                )
+            )}
+          </section>
         </Panel.Body>
       </Panel>
     </section>
@@ -191,4 +184,5 @@ const mapDispatchToProps = (dispatch) => {
       }),
   };
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(FormContainer);

@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Alert, IconButton } from 'emerald-ui/lib/';
+
 const Notice = () => {
   const [varshow, setShow] = useState(true);
   const hancleCloseNotice = (e) => {
     e.preventDefault();
     setShow(!varshow);
   };
+
   return (
     <React.Fragment>
       {varshow && (
@@ -27,4 +29,5 @@ const Notice = () => {
     </React.Fragment>
   );
 };
+
 export default Notice;

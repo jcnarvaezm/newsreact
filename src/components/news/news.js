@@ -3,10 +3,12 @@ import React from 'react';
 const News = (props) => {
   const { title, summary, link } = props;
   let { image } = props;
+
   if (image === '' || image === null) {
     image =
       'https://matthewsenvironmentalsolutions.com/images/com_hikashop/upload/not-available.png';
   }
+
   return (
     <section className="section-new">
       <section className="img-new">
@@ -23,4 +25,5 @@ const News = (props) => {
     </section>
   );
 };
+
 export default News;
