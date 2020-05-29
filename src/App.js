@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Provider } from 'react-redux';
 import './App.css';
 import 'emerald-ui/lib/styles.css';
 import Header from './components/header';
@@ -8,6 +9,8 @@ import Buttons from './components/buttons';
 import './css/main.css';
 import Subscribe from './components/subscribe/subscribe';
 import FormContainer from './components/formContainer';
+import ModalForm from './components/modalForm';
+import store from './redux/store';
 
 function App() {
   const [count, setCount] = useState(1);
@@ -33,7 +36,12 @@ function App() {
           </section>
         </section>
         <Subscribe />
-        <FormContainer />
+        <Provider store={store}>
+          <FormContainer />
+        </Provider>
+        <Provider store={store}>
+          <ModalForm />
+        </Provider>
       </section>
     </div>
   );

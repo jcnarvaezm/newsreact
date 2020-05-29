@@ -1,5 +1,7 @@
 import {
   SEND,
+  CLOSE,
+  CLOSETOAST,
   /*UPDATE_FIRSTNAME,
   UPDATE_LASTNAME,
   UPDATE_EMAIL,
@@ -9,20 +11,36 @@ import {
 } from '../actions/infoFormActions';
 
 const initalState = {
-  firstname: 'asdsd',
-  lastname: 'El willy',
+  firstname: '',
+  lastname: '',
   phonenumber: '',
   email: '',
   emailtext: '',
   chksendme: false,
+  show: false,
+  showToast: false,
 };
 
 const infoForm = (state = initalState, action) => {
   switch (action.type) {
     case SEND:
       return {
-        ...state,
         firstname: action.payload.firstname,
+        lastname: action.payload.lastname,
+        phonenumber: action.payload.phonenumber,
+        email: action.payload.email,
+        emailtext: action.payload.emailtext,
+        show: action.payload.show,
+      };
+    case CLOSE:
+      return {
+        ...state,
+        show: action.payload.show,
+      };
+    case CLOSETOAST:
+      return {
+        ...state,
+        showToast: action.payload.showToast,
       };
     /*case UPDATE_FIRSTNAME:
       return {

@@ -1,4 +1,6 @@
 export const SEND = 'SEND';
+export const CLOSE = 'CLOSE';
+export const CLOSETOAST = 'CLOSETOAST';
 /*export const UPDATE_FIRSTNAME = 'UPDATE_FIRSTNAME';
 export const UPDATE_LASTNAME = 'UPDATE_LASTNAME';
 export const UPDATE_EMAIL = 'UPDATE_EMAIL';
@@ -39,5 +41,17 @@ export const updateChkcheckme = () => {
 export const send = () => {
   return {
     type: SEND,
+  };
+};
+
+export const close = () => {
+  return {
+    type: CLOSE,
+  };
+};
+
+export const closeToast = () => {
+  return {
+    type: CLOSETOAST,
   };
 };
