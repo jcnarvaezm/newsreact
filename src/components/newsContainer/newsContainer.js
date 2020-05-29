@@ -6,7 +6,7 @@ import useFetch from '../../controllers/useFetch';
 const NewsContainer = (props) => {
   const count = props.count;
   const [newsData, isLoading] = useFetch(
-    `http://newsapi.org/v2/everything?q=bitcoin&from=2020-04-28&sortBy=publishedAt&apiKey=b9c5c16a422d4b7b90accf49eed04cbc`,
+    `http://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=b9c5c16a422d4b7b90accf49eed04cbc`,
     {}
   );
 

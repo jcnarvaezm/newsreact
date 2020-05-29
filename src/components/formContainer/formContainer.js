@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Panel, Row, Col, TextField, Checkbox } from 'emerald-ui/lib/';
 import { connect } from 'react-redux';
 import inputsController from '../../controllers/inputsController';
+import regularExpresion from '../../controllers/regularExpresion';
 import AlertInput from '../alertInput/alertInput';
 import { InitialStateformData } from './formData';
 
@@ -28,6 +29,16 @@ const FormContainer = (props) => {
       props.closeToast(true);
     }
   };
+  const validateRegularExpresion = (inputName, formData) => {
+    if (regularExpresion(inputName, formData)) {
+      showToast.push({
+        inputName,
+        messageCase: 2,
+        show: true,
+      });
+      props.closeToast(true);
+    }
+  };
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
@@ -39,6 +50,9 @@ const FormContainer = (props) => {
     inputValidator('phonenumber', formData.phonenumber);
     inputValidator('email', formData.email);
     inputValidator('emailtext', formData.emailtext);
+
+    validateRegularExpresion('phonenumber', formData.phonenumber);
+    validateRegularExpresion('email', formData.email);
 
     showToast.map((toast, index) => {
       if (toast.show === true) {
