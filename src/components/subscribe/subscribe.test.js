@@ -7,8 +7,8 @@ configure({
   adapter: new Adapter(),
 });
 
-describe('Testing App Component', () => {
-  test('testing App', () => {
+describe('Testing Subscribe Component', () => {
+  test('Testing Rendering of Subscribe Component', () => {
     const wrapper = shallow(<Subscribe />);
     expect(wrapper.find('h2').length).toBeGreaterThanOrEqual(1);
   });

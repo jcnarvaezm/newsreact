@@ -7,8 +7,8 @@ configure({
   adapter: new Adapter(),
 });
 
-describe('Testing App Component', () => {
-  test('testing App', () => {
+describe('Testing Header', () => {
+  test('Testing rendering of Header Component', () => {
     const wrapper = shallow(<Header />);
     expect(wrapper.find('img').length).toBeGreaterThanOrEqual(1);
   });

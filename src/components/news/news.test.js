@@ -7,13 +7,13 @@ configure({
   adapter: new Adapter(),
 });
 
-describe('Testing App Component', () => {
+describe('Testing News Component', () => {
   const title = 'Test';
   const summary = 'Testing with Jest';
   const link = 'localhost:3000';
   const image = '../../img/22589-1-2x.jpg';
 
-  test('testing App', () => {
+  test('Testing rendering of News Component', () => {
     const wrapper = shallow(
       <News title={title} summary={summary} link={link} image={image} />
     );

@@ -7,9 +7,9 @@ configure({
   adapter: new Adapter(),
 });
 
-describe('Testing App Component', () => {
-  test('testing App', () => {
+describe('Testing Notice Component', () => {
+  test('Testing rendering of Notice Component', () => {
     const wrapper = shallow(<Notice />);
-    expect(wrapper.find('div').exists()).toBe(true);
+    expect(wrapper.find('section').exists()).toBe(true);
   });
 });

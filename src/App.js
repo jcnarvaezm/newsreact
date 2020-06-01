@@ -23,7 +23,7 @@ function App() {
   };
 
   return (
-    <div className="">
+    <div>
       <Header />
       <section className="main">
         <section className="container">

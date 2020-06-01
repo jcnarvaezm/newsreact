@@ -7,20 +7,13 @@ configure({
   adapter: new Adapter(),
 });
 
-describe('Testing App Component', () => {
+describe('Testing NewsContainer Component', () => {
   let wrapper;
+  const count = 1;
   beforeEach(() => {
-    wrapper = mount(<NewsContainer />);
+    wrapper = mount(<NewsContainer count={count} />);
   });
-  it('Testing news Container showing the news list', () => {
+  it('Testing Rendering of NewsContainer showing the news list', () => {
     expect(wrapper).not.toBeNull();
   });
-  /*
-  const count = 1;
-
-  test('testing App', () => {
-    const wrapper = shallow(<NewsContainer count={count} />);
-    expect(wrapper.find('h2').exists()).toBe(true);
-  });
-  */
 });

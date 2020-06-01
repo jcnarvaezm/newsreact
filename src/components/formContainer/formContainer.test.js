@@ -9,36 +9,13 @@ configure({
   adapter: new Adapter(),
 });
 
-describe('Testing App Component', () => {
-  test('testing App', () => {
-    const appState = {
-      firstname: '',
-      lastname: '',
-      phonenumber: '',
-      email: '',
-      emailtext: '',
-      chksendme: false,
-      show: false,
-      showToast: false,
-    };
-    const ownProps = {
-      firstname: 'firstname',
-      lastname: 'lastname',
-      email: 'email@email.com',
-      phonenumber: '1234567890',
-      emailtext: 'email text test',
-      chksendme: true,
-      show: true,
-      showToast: false,
-    };
-    const componentState = mapStateToProps(appState, ownProps);
+describe('Testing Form Container', () => {
+  test('Testing rendering of form Component', () => {
     const wrapper = shallow(
       <Provider store={store}>
         <FormContainer />
       </Provider>
     );
-    expect(componentState.infoForm).toEqual(appState);
-    //console.log(wrapper.html('div'));
     expect(wrapper.html('section').length).toBeGreaterThanOrEqual(1);
   });
 });
