@@ -3,74 +3,213 @@ import { Panel, Row, Col, TextField, Checkbox } from 'emerald-ui/lib/';
 import { connect } from 'react-redux';
 import inputsController from '../../controllers/inputsController';
 import regularExpresion from '../../controllers/regularExpresion';
-import AlertInput from '../alertInput/alertInput';
 import { InitialStateformData } from './formData';
 
 const FormContainer = (props) => {
-  const [toasts, setToasts] = useState([]);
-  const showToast = [];
-
   const [formData, setFormData] = useState(InitialStateformData);
 
+  const [messageFirstname, setmessageFirstname] = useState('');
+  const [messageLastname, setmessageLastname] = useState('');
+  const [messageEmail, setmessageEmail] = useState('');
+  const [messagePhonenumber, setmessagePhonenumber] = useState('');
+  const [messageEmailtext, setmessageEmailtext] = useState('');
+
   const handleChangeInput = (e) => {
+    e.preventDefault();
+
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
+
+    if (e.target.value) {
+      switch (e.target.name) {
+        case 'firstname':
+          setmessageFirstname('');
+          break;
+        case 'lastname':
+          setmessageLastname('');
+          break;
+        case 'email':
+          setmessageEmail('');
+          break;
+        case 'phonenumber':
+          setmessagePhonenumber('');
+          break;
+        case 'emailtext':
+          setmessageEmailtext('');
+          break;
+        default:
+          break;
+      }
+    }
+
+    switch (e.target.name) {
+      case 'phonenumber':
+        validateRegularExpresion(e.target.name, e.target.value);
+        break;
+      case 'email':
+        validateRegularExpresion(e.target.name, e.target.value);
+        break;
+      default:
+        return null;
+    }
   };
 
   const hableClickChkSendMe = (e) => {
+    e.preventDefault();
     setFormData({
       ...formData,
       chksendme: e.target.checked,
     });
   };
 
-  const inputValidator = (inputName, formData) => {
-    if (inputsController(formData)) {
-      showToast.push({
-        inputName,
-        messageCase: 1,
-        show: true,
-      });
-      props.closeToast(true);
+  const inputValidator = (inputName, inputData) => {
+    if (inputsController(inputData)) {
+      switch (inputName) {
+        case 'firstname':
+          setmessageFirstname(
+            `The field: '${inputName}' has not the correct format`
+          );
+          break;
+        case 'lastname':
+          setmessageLastname(
+            `The field: '${inputName}' has not the correct format`
+          );
+          break;
+        case 'email':
+          setmessageEmail(
+            `The field: '${inputName}' has not the correct format`
+          );
+          break;
+        case 'phonenumber':
+          setmessagePhonenumber(
+            `The field: '${inputName}' has not the correct format`
+          );
+          break;
+        case 'emailtext':
+          setmessageEmailtext(
+            `The field: '${inputName}' has not the correct format`
+          );
+          break;
+        default:
+          break;
+      }
+      return true;
+    } else {
+      switch (inputName) {
+        case 'firstname':
+          setmessageFirstname('');
+          break;
+        case 'lastname':
+          setmessageLastname('');
+          break;
+        case 'email':
+          setmessageEmail('');
+          break;
+        case 'phonenumber':
+          setmessagePhonenumber('');
+          break;
+        case 'emailtext':
+          setmessageEmailtext('');
+          break;
+        default:
+          break;
+      }
+      return false;
     }
   };
-  const validateRegularExpresion = (inputName, formData) => {
-    if (regularExpresion(inputName, formData)) {
-      showToast.push({
-        inputName,
-        messageCase: 2,
-        show: true,
-      });
-      props.closeToast(true);
+
+  const validateRegularExpresion = (inputName, inputData) => {
+    if (regularExpresion(inputName, inputData)) {
+      switch (inputName) {
+        case 'firstname':
+          setmessageFirstname(
+            `The field: '${inputName}' has not the correct format`
+          );
+          break;
+        case 'lastname':
+          setmessageLastname(
+            `The field: '${inputName}' has not the correct format`
+          );
+          break;
+        case 'email':
+          setmessageEmail(
+            `The field: '${inputName}' has not the correct format`
+          );
+          break;
+        case 'phonenumber':
+          setmessagePhonenumber(
+            `The field: '${inputName}' has not the correct format`
+          );
+          break;
+        case 'emailtext':
+          setmessageEmailtext(
+            `The field: '${inputName}' has not the correct format`
+          );
+          break;
+        default:
+          break;
+      }
+      return true;
+    } else {
+      switch (inputName) {
+        case 'firstname':
+          setmessageFirstname('');
+          break;
+        case 'lastname':
+          setmessageLastname('');
+          break;
+        case 'email':
+          setmessageEmail('');
+          break;
+        case 'phonenumber':
+          setmessagePhonenumber('');
+          break;
+        case 'emailtext':
+          setmessageEmailtext('');
+          break;
+        default:
+          break;
+      }
+      return false;
     }
   };
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
 
-    let isToastTrue = false;
+    let modalValidatorFirstName = inputValidator(
+      'firstname',
+      formData.firstname
+    );
+    let modalValidatorLasttName = inputValidator('lastname', formData.lastname);
+    let modalValidatorPhoneNumber = inputValidator(
+      'phonenumber',
+      formData.phonenumber
+    );
+    let modalValidatorEmail = inputValidator('email', formData.email);
+    let modalValidatorEmailText = inputValidator(
+      'emailtext',
+      formData.emailtext
+    );
 
-    inputValidator('firstname', formData.firstname);
-    inputValidator('lastname', formData.lastname);
-    inputValidator('phonenumber', formData.phonenumber);
-    inputValidator('email', formData.email);
-    inputValidator('emailtext', formData.emailtext);
-
-    validateRegularExpresion('phonenumber', formData.phonenumber);
-    validateRegularExpresion('email', formData.email);
-
-    showToast.map((toast, index) => {
-      if (toast.show === true) {
-        isToastTrue = true;
-      }
-    });
-
-    setToasts(showToast);
-
-    if (isToastTrue) {
-      return;
+    if (
+      modalValidatorFirstName ||
+      modalValidatorLasttName ||
+      modalValidatorEmail ||
+      modalValidatorPhoneNumber ||
+      modalValidatorEmailText
+    ) {
+      return null;
+    }
+    modalValidatorEmail = validateRegularExpresion('email', formData.email);
+    modalValidatorPhoneNumber = validateRegularExpresion(
+      'phonenumber',
+      formData.phonenumber
+    );
+    if (modalValidatorPhoneNumber || modalValidatorEmail) {
+      return null;
     }
 
     const info = {
@@ -95,6 +234,7 @@ const FormContainer = (props) => {
           <Row>
             <Col xs={12} sm={6} className="field-section">
               <TextField
+                errorMessage={messageFirstname}
                 label="First name"
                 onChange={handleChangeInput}
                 name="firstname"
@@ -107,6 +247,7 @@ const FormContainer = (props) => {
                 onChange={handleChangeInput}
                 name="lastname"
                 value={formData.lastname}
+                errorMessage={messageLastname}
               />
             </Col>
             <Col xs={12} sm={6} className="field-section">
@@ -115,6 +256,7 @@ const FormContainer = (props) => {
                 onChange={handleChangeInput}
                 name="email"
                 value={formData.email}
+                errorMessage={messageEmail}
               />
             </Col>
             <Col xs={12} sm={6} className="field-section">
@@ -125,16 +267,19 @@ const FormContainer = (props) => {
                 maxLength="10"
                 name="phonenumber"
                 value={formData.phonenumber}
+                errorMessage={messagePhonenumber}
               />
             </Col>
             <Col xs={12} className="field-section">
               <TextField
                 label="Email"
-                role="textbox"
-                className="email-text-field"
+                role="textarea"
+                type="textarea"
+                size="large"
                 onChange={handleChangeInput}
                 name="emailtext"
                 value={formData.emailtext}
+                errorMessage={messageEmailtext}
               />
             </Col>
             <Col xs={12} className="field-section">
@@ -151,19 +296,6 @@ const FormContainer = (props) => {
               </button>
             </Col>
           </Row>
-          <section>
-            {toasts.map(
-              (toast, index) =>
-                toast.show && (
-                  <AlertInput
-                    key={index}
-                    show={true}
-                    inputName={toast.inputName}
-                    messageCase={toast.messageCase}
-                  />
-                )
-            )}
-          </section>
         </Panel.Body>
       </Panel>
     </section>

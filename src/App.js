@@ -8,10 +8,11 @@ import 'emerald-ui/lib/styles.css';
 import Header from './components/header';
 import Notice from './components/notice';
 import NewsContainer from './components/newsContainer';
-import Buttons from './components/buttons';
 import Subscribe from './components/subscribe/subscribe';
 import FormContainer from './components/formContainer';
 import ModalForm from './components/modalForm';
+
+import { Button } from 'emerald-ui/lib/';
 
 import './css/main.css';
 
@@ -32,11 +33,9 @@ function App() {
             <NewsContainer count={count} />
           </section>
           <section className="section-button">
-            <Buttons
-              color="primary"
-              text="View more stories"
-              onClick={handleClickShowMoreNew}
-            />
+            <Button color="primary" onClick={handleClickShowMoreNew}>
+              <span>View more stories</span>
+            </Button>
           </section>
         </section>
         <Subscribe />

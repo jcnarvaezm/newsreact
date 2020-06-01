@@ -12,18 +12,18 @@ const Notice = () => {
     <React.Fragment>
       {varshow && (
         <Alert>
-          <div>
+          <section>
             Welcome to the new look of News.com. Keep scrolling to discover
             interesting new features and news.
-          </div>
-          <div className="btn-toolbar">
+          </section>
+          <section className="btn-toolbar">
             <IconButton
               ariaLabel="Close"
               icon="cancel"
               title="Close"
               onClick={hancleCloseNotice}
             />
-          </div>
+          </section>
         </Alert>
       )}
     </React.Fragment>

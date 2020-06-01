@@ -1,5 +1,5 @@
 const inputsController = (value) => {
-  if (value.trim() === null || value.trim() === '') {
+  if (!value.trim()) {
     return true;
   }
   return false;

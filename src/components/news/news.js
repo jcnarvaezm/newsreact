@@ -1,10 +1,11 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from 'react';
 
 const News = (props) => {
   const { title, summary, link } = props;
   let { image } = props;
 
-  if (image === '' || image === null) {
+  if (!image) {
     image =
       'https://matthewsenvironmentalsolutions.com/images/com_hikashop/upload/not-available.png';
   }

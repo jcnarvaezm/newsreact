@@ -1,0 +1,30 @@
+.main {
+  margin-top: 25px;
+}
+i.fas {
+  margin-right: 10px;
+}
+.eui-row {
+  margin-right: 0;
+}
+.section-button {
+  text-align: center;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.08px;
+  line-height: 19px;
+  margin-top: 35px;
+  margin-bottom: 81px;
+  button {
+    width: 170px;
+    height: 39px;
+    border: 1px solid #0073e9;
+    color: #fff;
+    border-radius: 2px;
+    background-color: #0073e9;
+  }
+}
+@import 'new';
+@import 'banner';
+@import 'formContainer';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { configure, render } from 'enzyme';
+import { configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import ModalForm, { mapStateToProps } from './modalForm';
 import store from '../../redux/store';
@@ -10,7 +10,18 @@ configure({
 });
 
 describe('Testing App Component', () => {
-  test('testing App', () => {
+  let wrapper;
+  beforeEach(() => {
+    wrapper = mount(
+      <Provider store={store}>
+        <ModalForm />
+      </Provider>
+    );
+  });
+  test('Testing modalForm rendering', () => {
+    expect(wrapper).not.toBeNull();
+  });
+  test('Testing modalForm State', () => {
     const appState = {
       firstname: '',
       lastname: '',
@@ -32,13 +43,6 @@ describe('Testing App Component', () => {
       showToast: false,
     };
     const componentState = mapStateToProps(appState, ownProps);
-    const wrapper = render(
-      <Provider store={store}>
-        <ModalForm />
-      </Provider>
-    );
     expect(componentState.infoForm).toEqual(appState);
-    //console.log(wrapper.html('section'));
-    //expect(wrapper.html('section').length).toBeGreaterThanOrEqual(1);
   });
 });

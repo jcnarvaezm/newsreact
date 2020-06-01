@@ -1,0 +1,120 @@
+.main {
+  margin-top: 25px;
+}
+i.fas {
+  margin-right: 10px;
+}
+.img-new {
+  min-height: 150px;
+  max-height: 150px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+.img-new img {
+  max-height: 150px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.titular {
+  margin: 1em 0;
+  text-align: justify;
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+}
+.summary {
+  position: relative;
+  bottom: 0;
+  max-height: 198px;
+  overflow: hidden;
+}
+.summary p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 198px;
+}
+.section-button {
+  text-align: center;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.08px;
+  line-height: 19px;
+  margin-top: 35px;
+  margin-bottom: 81px;
+}
+.section-button button,
+.field-section button {
+  width: 170px;
+  height: 39px;
+  border: 1px solid #0073e9;
+  color: #fff;
+  border-radius: 2px;
+  background-color: #0073e9;
+}
+.banner {
+  background-image: url('../img/22589-1-2x.jpg');
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 576px;
+}
+.banner-suscribe-text {
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: translateY(90%);
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
+}
+.banner-suscribe-text h2 {
+  color: #fff;
+  font-size: 2em;
+}
+.banner-suscribe-text p {
+  margin: 1.5em auto;
+}
+.btn-subscribe {
+  background: transparent !important;
+  color: #fff !important;
+  text-shadow: 1px 1px 3px #000 !important;
+  box-sizing: border-box;
+  height: 40px;
+  width: 147px;
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+}
+.section-form {
+  margin-top: 66px;
+}
+.section-form h2 {
+  color: #1d2121;
+  font-family: 'Open Sans';
+  font-size: 30px;
+  letter-spacing: -0.16px;
+  line-height: 41px;
+  text-align: center;
+}
+.form-container {
+  margin-top: 23px;
+  margin-bottom: 106px;
+}
+.email-text-field {
+  max-width: 100%;
+  min-width: 100%;
+  height: 88px;
+  border-radius: 3px;
+  border: solid #d3dbe7 1px;
+}
+.email-text-label {
+  font-size: 13px;
+  line-height: 18px;
+}
+.field-section {
+  margin-top: 46px;
+}
+.field-section-btn {
+  text-align: center;
+}
