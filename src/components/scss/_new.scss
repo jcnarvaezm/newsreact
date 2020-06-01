@@ -1,39 +1,35 @@
-.section-new {
+.img-new {
+  min-height: 150px;
+  max-height: 150px;
+  position: relative;
+  text-align: center;
   width: 100%;
 
-  .img-new {
-    min-height: 150px;
+  img {
     max-height: 150px;
-    position: relative;
-    text-align: center;
     width: 100%;
-
-    img {
-      max-height: 150px;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    height: 100%;
+    object-fit: cover;
   }
+}
 
-  .titular {
-    margin: 1em 0;
-    text-align: justify;
-    position: relative;
-    height: 100px;
+.titular {
+  margin: 1em 0;
+  text-align: justify;
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+}
+
+.summary {
+  position: relative;
+  bottom: 0;
+  max-height: 198px;
+  overflow: hidden;
+
+  p {
+    text-overflow: ellipsis;
     overflow: hidden;
-  }
-
-  .summary {
-    position: relative;
-    bottom: 0;
-    max-height: 198px;
-    overflow: hidden;
-
-    p {
-      text-overflow: ellipsis;
-      overflow: hidden;
-      height: 198px;
-    }
+    height: 198px;
   }
 }

@@ -12,7 +12,7 @@ const NewsContainer = (props) => {
 
   return (
     <Panel>
-      <Panel.Body className="container">
+      <Panel.Body>
         {isLoading && <h2>Loading...!!!</h2>}
         <Row>
           {Object.values(newsData).map(
