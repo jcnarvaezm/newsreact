@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Form Container renders form container correctly 1`] = `
+<div
+  className="eui-alert eui-alert-info"
+  role="alert"
+>
+  <section>
+    Welcome to the new look of News.com. Keep scrolling to discover interesting new features and news.
+  </section>
+  <button
+    className="eui-icon-button"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <i
+      className="eui-icon material-icons"
+    >
+      cancel
+    </i>
+  </button>
+</div>
+`;
