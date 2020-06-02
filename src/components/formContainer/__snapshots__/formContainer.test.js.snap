@@ -1,0 +1,255 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Form Container renders form container correctly 1`] = `
+<section
+  className="section-form"
+>
+  <h2>
+    Contact Us
+  </h2>
+  <div
+    className="eui-panel container form-container eui-panel-default"
+  >
+    <div
+      className="eui-panel-body"
+    >
+      <form>
+        <div
+          className="eui-row"
+        >
+          <div
+            className="eui-col field-section eui-col-xs-12 eui-col-sm-6"
+          >
+            <div
+              className="eui-text-field"
+            >
+              <div
+                className="eui-text-field-wrapper"
+              >
+                <input
+                  aria-errormessage="undefinedErrorMessage"
+                  aria-invalid={false}
+                  aria-label="First name"
+                  disabled={false}
+                  name="firstname"
+                  onChange={[Function]}
+                  onKeyPress={[Function]}
+                  role="textbox"
+                  type="text"
+                  value=""
+                />
+                <div
+                  className="eui-text-field-footer"
+                >
+                  <span
+                    className="eui-text-field-message eui-text-field-error-message"
+                    id="undefinedErrorMessage"
+                    role="alert"
+                  >
+                    
+                  </span>
+                  <span
+                    className="eui-text-field-message eui-text-field-help-text"
+                  />
+                </div>
+              </div>
+              <label>
+                First name
+              </label>
+            </div>
+          </div>
+          <div
+            className="eui-col field-section eui-col-xs-12 eui-col-sm-6"
+          >
+            <div
+              className="eui-text-field"
+            >
+              <div
+                className="eui-text-field-wrapper"
+              >
+                <input
+                  aria-errormessage="undefinedErrorMessage"
+                  aria-invalid={false}
+                  aria-label="Last name"
+                  disabled={false}
+                  name="lastname"
+                  onChange={[Function]}
+                  onKeyPress={[Function]}
+                  role="textbox"
+                  type="text"
+                  value=""
+                />
+                <div
+                  className="eui-text-field-footer"
+                >
+                  <span
+                    className="eui-text-field-message eui-text-field-error-message"
+                    id="undefinedErrorMessage"
+                    role="alert"
+                  >
+                    
+                  </span>
+                  <span
+                    className="eui-text-field-message eui-text-field-help-text"
+                  />
+                </div>
+              </div>
+              <label>
+                Last name
+              </label>
+            </div>
+          </div>
+          <div
+            className="eui-col field-section eui-col-xs-12 eui-col-sm-6"
+          >
+            <div
+              className="eui-text-field"
+            >
+              <div
+                className="eui-text-field-wrapper"
+              >
+                <input
+                  aria-errormessage="undefinedErrorMessage"
+                  aria-invalid={false}
+                  aria-label="Email"
+                  disabled={false}
+                  name="email"
+                  onChange={[Function]}
+                  onKeyPress={[Function]}
+                  role="textbox"
+                  type="text"
+                  value=""
+                />
+                <div
+                  className="eui-text-field-footer"
+                >
+                  <span
+                    className="eui-text-field-message eui-text-field-error-message"
+                    id="undefinedErrorMessage"
+                    role="alert"
+                  >
+                    
+                  </span>
+                  <span
+                    className="eui-text-field-message eui-text-field-help-text"
+                  />
+                </div>
+              </div>
+              <label>
+                Email
+              </label>
+            </div>
+          </div>
+          <div
+            className="eui-col field-section eui-col-xs-12 eui-col-sm-6"
+          >
+            <div
+              className="eui-text-field"
+            >
+              <div
+                className="eui-text-field-wrapper"
+              >
+                <input
+                  aria-errormessage="undefinedErrorMessage"
+                  aria-invalid={false}
+                  aria-label="Phone number"
+                  disabled={false}
+                  maxLength="10"
+                  name="phonenumber"
+                  onChange={[Function]}
+                  onKeyPress={[Function]}
+                  role="textbox"
+                  type="number"
+                  value=""
+                />
+                <div
+                  className="eui-text-field-footer"
+                >
+                  <span
+                    className="eui-text-field-counter"
+                  >
+                    0/10
+                  </span>
+                  <span
+                    className="eui-text-field-message eui-text-field-error-message"
+                    id="undefinedErrorMessage"
+                    role="alert"
+                  >
+                    
+                  </span>
+                  <span
+                    className="eui-text-field-message eui-text-field-help-text"
+                  />
+                </div>
+              </div>
+              <label>
+                Phone number
+              </label>
+            </div>
+          </div>
+          <div
+            className="eui-col field-section eui-col-xs-12"
+          >
+            <div
+              className="eui-text-field"
+            >
+              <div
+                className="eui-text-field-wrapper"
+              >
+                <textarea
+                  className="field-section-textarea"
+                  name="emailtext"
+                  onChange={[Function]}
+                  value=""
+                />
+              </div>
+              <label>
+                Email
+              </label>
+            </div>
+          </div>
+          <div
+            className="eui-col field-section eui-col-xs-12"
+          >
+            <label
+              className="eui-checkbox eui-has-label"
+            >
+              <input
+                className="eui-checkbox-input"
+                name="chksendme"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                type="checkbox"
+                value={false}
+              />
+              <div
+                className="eui-checkbox-check"
+                onClick={[Function]}
+                role="presentation"
+              />
+              <span
+                className="eui-checkbox-label"
+                onClick={[Function]}
+                role="presentation"
+              >
+                Send me emails about breaking news and promotions.
+              </span>
+            </label>
+          </div>
+          <div
+            className="eui-col field-section section-button eui-col-xs-12"
+          >
+            <button
+              onClick={[Function]}
+              type="submit"
+            >
+              Submit form
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+`;
