@@ -323,8 +323,7 @@ describe('FormContainer: Send ', () => {
     act(() => {
       form.props.onClick(event);
     });
-    console.log(handleSubmitFormMock);
-    //expect(handleSubmitFormMock).toHaveBeenCalledTimes(1);
+    expect(handleSubmitFormMock).toHaveBeenCalledTimes(0);
   });
 
   it('Contact form submit without text', () => {

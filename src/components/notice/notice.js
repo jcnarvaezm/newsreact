@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Alert, IconButton } from 'emerald-ui/lib/';
+import { Alert } from 'emerald-ui/lib/';
 
 const Notice = () => {
   const [varshow, setShow] = useState(true);
-  const hancleCloseNotice = (e) => {
+  const handleDismiss = (e) => {
     e.preventDefault();
     setShow(!varshow);
   };
@@ -11,18 +11,10 @@ const Notice = () => {
   return (
     <React.Fragment>
       {varshow && (
-        <Alert>
+        <Alert dismissible onDismiss={handleDismiss}>
           <section>
             Welcome to the new look of News.com. Keep scrolling to discover
             interesting new features and news.
-          </section>
-          <section className="btn-toolbar">
-            <IconButton
-              ariaLabel="Close"
-              icon="cancel"
-              title="Close"
-              onClick={hancleCloseNotice}
-            />
           </section>
         </Alert>
       )}
