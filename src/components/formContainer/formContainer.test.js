@@ -1,7 +1,7 @@
 import React from 'react';
-import { configure, shallow } from 'enzyme';
+import { configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import FormContainer, { mapStateToProps } from './formContainer';
+import FormContainer from './formContainer';
 import store from '../../redux/store';
 import { Provider } from 'react-redux';
 
@@ -10,12 +10,12 @@ configure({
 });
 
 describe('Testing Form Container', () => {
+  const wrapper = mount(
+    <Provider store={store}>
+      <FormContainer />
+    </Provider>
+  );
   test('Testing rendering of form Component', () => {
-    const wrapper = shallow(
-      <Provider store={store}>
-        <FormContainer />
-      </Provider>
-    );
     expect(wrapper.html('section').length).toBeGreaterThanOrEqual(1);
   });
 });

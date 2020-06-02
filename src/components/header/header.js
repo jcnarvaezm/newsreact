@@ -23,19 +23,19 @@ const Header = () => {
             Sport
           </DropdownItem>
           <DropdownItem eventKey="2">
-            <i class="fas fa-film"></i>
+            <i className="fas fa-film"></i>
             Entertainment
           </DropdownItem>
           <DropdownItem eventKey="3">
-            <i class="fas fa-users"></i>
+            <i className="fas fa-users"></i>
             Social
           </DropdownItem>
           <DropdownItem eventKey="3">
-            <i class="fas fa-heartbeat"></i>
+            <i className="fas fa-heartbeat"></i>
             Health
           </DropdownItem>
           <DropdownItem eventKey="3">
-            <i class="fas fa-mobile-alt"></i>
+            <i className="fas fa-mobile-alt"></i>
             Technology
           </DropdownItem>
         </DropdownButton>

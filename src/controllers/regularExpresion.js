@@ -15,15 +15,7 @@ const RegularExpresion = (input, textInput) => {
       ) {
         return false;
       } else {
-        if (/^[@-_.]/.test(textInput)) {
-          return true;
-        } else {
-          if (/^[0-9]/.test(textInput)) {
-            return true;
-          } else {
-            return true;
-          }
-        }
+        return true;
       }
 
     default:

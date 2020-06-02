@@ -271,16 +271,18 @@ const FormContainer = (props) => {
               />
             </Col>
             <Col xs={12} className="field-section">
-              <TextField
-                label="Email"
-                role="textarea"
-                type="textarea"
-                size="large"
-                onChange={handleChangeInput}
-                name="emailtext"
-                value={formData.emailtext}
-                errorMessage={messageEmailtext}
-              />
+              <div className="eui-text-field">
+                <div className="eui-text-field-wrapper">
+                  <textarea
+                    className="field-section-textarea"
+                    onChange={handleChangeInput}
+                    name="emailtext"
+                    value={formData.emailtext}
+                    aria-label="Email"
+                  ></textarea>
+                </div>
+                <label>Email</label>
+              </div>
             </Col>
             <Col xs={12} className="field-section">
               <Checkbox
