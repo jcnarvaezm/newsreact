@@ -16,3 +16,20 @@ exports[`Testing useFetch useEffect test 1`] = `
   </div>
 </div>
 `;
+
+exports[`Testing useFetch useEffect test 2`] = `
+<div
+  className="eui-panel eui-panel-default"
+>
+  <div
+    className="eui-panel-body"
+  >
+    <h2>
+      Loading...!!!
+    </h2>
+    <div
+      className="eui-row"
+    />
+  </div>
+</div>
+`;

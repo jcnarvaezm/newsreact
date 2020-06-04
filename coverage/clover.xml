@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1591296378984" clover="3.2.0">
-  <project timestamp="1591296378984" name="All files">
+<coverage generated="1591296512237" clover="3.2.0">
+  <project timestamp="1591296512237" name="All files">
     <metrics statements="165" coveredstatements="159" conditionals="59" coveredconditionals="56" methods="33" coveredmethods="29" elements="257" coveredelements="244" complexity="0" loc="165" ncloc="165" packages="12" files="24" classes="24"/>
     <package name="src">
       <metrics statements="8" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
@@ -174,9 +174,9 @@
       <file name="newsContainer.js" path="D:\CondorTrabajoenCasa\newsreact\src\components\newsContainer\newsContainer.js">
         <metrics statements="5" coveredstatements="4" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="1"/>
         <line num="6" count="4" type="stmt"/>
-        <line num="7" count="5" type="stmt"/>
-        <line num="8" count="5" type="stmt"/>
-        <line num="12" count="5" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
         <line num="18" count="0" type="cond" truecount="0" falsecount="2"/>
       </file>
     </package>
@@ -230,15 +230,15 @@
       <file name="useFetch.js" path="D:\CondorTrabajoenCasa\newsreact\src\controllers\useFetch.js">
         <metrics statements="10" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
         <line num="3" count="4" type="stmt"/>
-        <line num="4" count="5" type="stmt"/>
-        <line num="5" count="5" type="stmt"/>
-        <line num="7" count="5" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
         <line num="9" count="2" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
-        <line num="17" count="5" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
       </file>
     </package>
     <package name="src.redux">

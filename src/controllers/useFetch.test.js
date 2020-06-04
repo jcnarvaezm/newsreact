@@ -54,4 +54,15 @@ describe('Testing useFetch', () => {
     });
     await waitFor(() => expect(data).toHaveBeenCalledTimes(1));
   });
+
+  test('useEffect test', async (done) => {
+    jest.spyOn(React, 'useEffect').mockImplementation();
+    let component = create(<NewsContainer count={1} />);
+    act(() => {
+      component.update();
+      expect(component.toJSON()).toMatchSnapshot();
+      done();
+    });
+    await waitFor(() => expect(data).toHaveBeenCalledTimes(1));
+  });
 });
