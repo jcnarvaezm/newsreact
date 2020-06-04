@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
-const useFetch = (url, initialState = []) => {
-  const [dataNews, setDataNews] = useState(initialState);
+const useFetch = (url) => {
+  const [dataNews, setDataNews] = useState([]);
   const [isFetching, setFetchin] = useState(true);
 
   useEffect(() => {

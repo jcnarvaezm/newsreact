@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1591236145302" clover="3.2.0">
-  <project timestamp="1591236145302" name="All files">
-    <metrics statements="165" coveredstatements="159" conditionals="60" coveredconditionals="56" methods="33" coveredmethods="29" elements="258" coveredelements="244" complexity="0" loc="165" ncloc="165" packages="12" files="24" classes="24"/>
+<coverage generated="1591296378984" clover="3.2.0">
+  <project timestamp="1591296378984" name="All files">
+    <metrics statements="165" coveredstatements="159" conditionals="59" coveredconditionals="56" methods="33" coveredmethods="29" elements="257" coveredelements="244" complexity="0" loc="165" ncloc="165" packages="12" files="24" classes="24"/>
     <package name="src">
       <metrics statements="8" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
       <file name="App.js" path="D:\CondorTrabajoenCasa\newsreact\src\App.js">
@@ -174,10 +174,10 @@
       <file name="newsContainer.js" path="D:\CondorTrabajoenCasa\newsreact\src\components\newsContainer\newsContainer.js">
         <metrics statements="5" coveredstatements="4" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="1"/>
         <line num="6" count="4" type="stmt"/>
-        <line num="7" count="4" type="stmt"/>
-        <line num="8" count="4" type="stmt"/>
-        <line num="13" count="4" type="stmt"/>
-        <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="18" count="0" type="cond" truecount="0" falsecount="2"/>
       </file>
     </package>
     <package name="src.components.notice">
@@ -207,7 +207,7 @@
       </file>
     </package>
     <package name="src.controllers">
-      <metrics statements="23" coveredstatements="20" conditionals="10" coveredconditionals="9" methods="6" coveredmethods="4"/>
+      <metrics statements="23" coveredstatements="20" conditionals="9" coveredconditionals="9" methods="6" coveredmethods="4"/>
       <file name="inputsController.js" path="D:\CondorTrabajoenCasa\newsreact\src\controllers\inputsController.js">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="5" type="stmt"/>
@@ -228,17 +228,17 @@
         <line num="22" count="26" type="stmt"/>
       </file>
       <file name="useFetch.js" path="D:\CondorTrabajoenCasa\newsreact\src\controllers\useFetch.js">
-        <metrics statements="10" coveredstatements="7" conditionals="1" coveredconditionals="0" methods="4" coveredmethods="2"/>
-        <line num="3" count="4" type="cond" truecount="0" falsecount="1"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
-        <line num="7" count="4" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
+        <metrics statements="10" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
-        <line num="17" count="4" type="stmt"/>
+        <line num="17" count="5" type="stmt"/>
       </file>
     </package>
     <package name="src.redux">
