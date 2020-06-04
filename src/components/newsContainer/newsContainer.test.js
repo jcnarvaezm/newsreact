@@ -1,10 +1,19 @@
 import React from 'react';
-import { configure, mount } from 'enzyme';
+import { configure, mount, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import NewsContainer from './newsContainer';
 
 configure({
   adapter: new Adapter(),
+});
+
+describe('Testing NewsContainer Component without count', () => {
+  let wrapper;
+  const count = 0;
+  it('Testing Rendering of NewsContainer', () => {
+    wrapper = shallow(<NewsContainer count={count} />);
+    expect(wrapper).not.toBeNull();
+  });
 });
 
 describe('Testing NewsContainer Component', () => {

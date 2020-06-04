@@ -4,7 +4,7 @@ import News from '../news';
 import useFetch from '../../controllers/useFetch';
 
 const NewsContainer = (props) => {
-  const count = props.count;
+  const count = props.count * 4;
   const [newsData, isLoading] = useFetch(
     `http://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=b9c5c16a422d4b7b90accf49eed04cbc`,
     {}
@@ -15,18 +15,19 @@ const NewsContainer = (props) => {
       <Panel.Body>
         {isLoading && <h2>Loading...!!!</h2>}
         <Row>
-          {Object.values(newsData).map(
-            (news, index) =>
-              index < count * 4 && (
-                <Col xs={12} sm={6} key={index}>
-                  <News
-                    title={news.title}
-                    image={news.urlToImage}
-                    summary={news.description}
-                    link={news.url}
-                  />
-                </Col>
-              )
+          {Object.values(newsData).map((news, index) =>
+            index < count ? (
+              <Col xs={12} sm={6} key={index}>
+                <News
+                  title={news.title}
+                  image={news.urlToImage}
+                  summary={news.description}
+                  link={news.url}
+                />
+              </Col>
+            ) : (
+              <Col xs={12}></Col>
+            )
           )}
         </Row>
       </Panel.Body>

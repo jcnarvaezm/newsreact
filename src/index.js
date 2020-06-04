@@ -2,9 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+let root = document.getElementById('root');
+function renderToDOM() {
+  if (root !== null) {
+    ReactDOM.render(<App />, root);
+  }
+}
+renderToDOM();
+export { renderToDOM };

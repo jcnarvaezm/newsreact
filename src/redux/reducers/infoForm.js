@@ -1,4 +1,4 @@
-import { SEND, CLOSE, CLOSETOAST } from '../actions/infoFormActions';
+import { SEND, CLOSE } from '../actions/infoFormActions';
 
 const initalState = {
   firstname: '',
@@ -27,11 +27,6 @@ const infoForm = (state = initalState, action) => {
       return {
         ...state,
         show: action.payload.show,
-      };
-    case CLOSETOAST:
-      return {
-        ...state,
-        showToast: action.payload.showToast,
       };
     default:
       return state;

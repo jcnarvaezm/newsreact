@@ -1,6 +1,5 @@
 export const SEND = 'SEND';
 export const CLOSE = 'CLOSE';
-export const CLOSETOAST = 'CLOSETOAST';
 
 export const send = () => {
   return {
@@ -11,11 +10,5 @@ export const send = () => {
 export const close = () => {
   return {
     type: CLOSE,
-  };
-};
-
-export const closeToast = () => {
-  return {
-    type: CLOSETOAST,
   };
 };

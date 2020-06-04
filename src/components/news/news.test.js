@@ -19,4 +19,10 @@ describe('Testing News Component', () => {
     );
     expect(wrapper.find('.titular').length).toBeGreaterThanOrEqual(1);
   });
+  test('Testing rendering of News Component without img prop', () => {
+    const wrapper = shallow(
+      <News title={title} summary={summary} link={link} image={null} />
+    );
+    expect(wrapper.find('.titular').length).toBeGreaterThanOrEqual(1);
+  });
 });

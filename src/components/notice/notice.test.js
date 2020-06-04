@@ -34,7 +34,7 @@ describe('Testing Form Container', () => {
     content = instance.findByType('div');
     expect(content.props.className).toEqual('eui-alert eui-alert-info');
   });
-  test('', () => {
+  test('Testin button', () => {
     let form = instance.findByType('button');
     // Submit form
     act(() => {

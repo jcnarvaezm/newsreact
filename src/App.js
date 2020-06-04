@@ -18,12 +18,12 @@ import './css/main.css';
 
 function App() {
   const [count, setCount] = useState(1);
-  const handleClickShowMoreNew = () => {
+  const handleClickShowMoreNew = (e) => {
     setCount(count + 1);
   };
 
   return (
-    <div>
+    <div className="App">
       <Header />
       <section className="main">
         <section className="container">
