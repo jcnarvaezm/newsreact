@@ -1,5 +1,4 @@
 import ReactDOM from 'react-dom';
-import { mock } from 'jest';
 import { renderToDOM } from '../index';
 
 describe('test ReactDOM.render', () => {

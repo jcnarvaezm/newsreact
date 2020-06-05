@@ -6,8 +6,8 @@ configure({
   adapter: new Adapter(),
 });
 
-describe('Testing App Component', () => {
-  test('testing App', () => {
+describe('Testing InfoForm', () => {
+  test('Testing InfoForm State', () => {
     const appState = {
       firstname: '',
       lastname: '',

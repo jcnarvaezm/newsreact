@@ -60,7 +60,7 @@ describe('Testing Form Container', () => {
     expect(componentState.infoForm).toEqual(appState);
   });
 
-  it('should not regress', () => {
+  it('should snapshot', () => {
     expect(tree).toMatchSnapshot();
   });
 

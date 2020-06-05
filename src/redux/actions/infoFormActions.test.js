@@ -1,11 +1,11 @@
 import { SEND, CLOSE, send, close } from './infoFormActions';
 
-describe('Inputs Controllers Unit Test', () => {
-  test('Input controller when value is empty', () => {
+describe('Unit test for InfoForm Actions', () => {
+  test('Test send method', () => {
     expect(send()).toEqual({ type: SEND });
   });
 
-  test('Input controller when value is not empty', () => {
+  test('Test close method', () => {
     expect(close()).toEqual({ type: CLOSE });
   });
 });

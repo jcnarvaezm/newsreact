@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Testing Form Container renders form container correctly 1`] = `
+exports[`Testing Notice Container renders Notice correctly 1`] = `
 <div
   className="eui-alert eui-alert-info"
   role="alert"

@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import { Panel, Row, Col, TextField, Checkbox } from 'emerald-ui/lib/';
 import { connect } from 'react-redux';
+
 import inputsController from '../../controllers/inputsController';
 import regularExpresion from '../../controllers/regularExpresion';
+
+import { Panel, Row, Col, TextField, Checkbox } from 'emerald-ui/lib/';
+
 import { InitialStateformData } from './formData';
 
 const FormContainer = (props) => {

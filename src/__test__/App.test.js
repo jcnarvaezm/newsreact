@@ -2,7 +2,6 @@ import React from 'react';
 import { configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import App from '../App';
-import { create, act } from 'react-test-renderer';
 
 configure({
   adapter: new Adapter(),

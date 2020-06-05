@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Testing Form Container should not regress 1`] = `
+exports[`Testing Form Container should snapshot 1`] = `
 <section
   className="container"
 />

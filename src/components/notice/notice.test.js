@@ -8,7 +8,7 @@ configure({
   adapter: new Adapter(),
 });
 
-describe('Testing Form Container', () => {
+describe('Testing Notice Container', () => {
   let component;
   let tree;
   let instance;
@@ -26,7 +26,7 @@ describe('Testing Form Container', () => {
     instance = component.root;
   });
 
-  test('renders form container correctly', () => {
+  test('renders Notice correctly', () => {
     expect(tree).toMatchSnapshot();
   });
 
@@ -34,7 +34,7 @@ describe('Testing Form Container', () => {
     content = instance.findByType('div');
     expect(content.props.className).toEqual('eui-alert eui-alert-info');
   });
-  test('Testin button', () => {
+  test('Testing button', () => {
     let form = instance.findByType('button');
     // Submit form
     act(() => {
