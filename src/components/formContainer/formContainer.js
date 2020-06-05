@@ -160,12 +160,12 @@ const FormContainer = (props) => {
       formData.phonenumber
     );
     if (
-      modalValidatorFirstName &&
-      modalValidatorLasttName &&
-      modalValidatorEmail &&
-      modalValidatorPhoneNumber &&
-      modalValidatorEmailText &&
-      modalValidatorREPhoneNumber &&
+      modalValidatorFirstName ||
+      modalValidatorLasttName ||
+      modalValidatorEmail ||
+      modalValidatorPhoneNumber ||
+      modalValidatorEmailText ||
+      modalValidatorREPhoneNumber ||
       modalValidatorREEmail
     ) {
       return null;

@@ -74,14 +74,6 @@ describe('FormContainer: Send ', () => {
     messageInput = form.findByProps({ name: 'firstname' });
   });
 
-  it('Contact form handleClick', () => {
-    const form = instance.findByType('button');
-    act(() => {
-      form.props.onClick(event);
-    });
-    expect(handleSubmitFormMock).toHaveBeenCalledTimes(0);
-  });
-
   it('Contact form submit without firstname', () => {
     act(() => {
       for (let index = 0; index < textInputs.length; index++) {
