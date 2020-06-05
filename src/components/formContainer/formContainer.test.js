@@ -76,7 +76,7 @@ describe('FormContainer: Send ', () => {
 
     // Get form inputs
     textInputs = form.findAllByType(TextField);
-    textArea = form.findAllByType('textarea');
+    textArea = form.findByType('textarea');
     messageInputFn = form.findByProps({ name: 'firstname' });
     messageInputLn = form.findByProps({ name: 'lastname' });
     messageInputPn = form.findByProps({ name: 'phonenumber' });
@@ -85,20 +85,26 @@ describe('FormContainer: Send ', () => {
   });
 
   it('Contact form submit without firstname', () => {
-    act(() => {
-      for (let index = 0; index < textInputs.length; index++) {
-        const input = textInputs[index];
-        if (input.props.name !== 'firstname') {
-          input.props.onChange({
-            ...event,
-            target: {
-              name: input.props.name,
-              value: formData[input.props.name],
-            },
-          });
-        }
+    for (let index = 0; index < textInputs.length; index++) {
+      const input = textInputs[index];
+      if (input.props.name !== 'firstname') {
+        input.props.onChange({
+          ...event,
+          target: {
+            name: input.props.name,
+            value: formData[input.props.name],
+          },
+        });
       }
+    }
+    textArea.props.onChange({
+      ...event,
+      target: {
+        name: 'emailtext',
+        value: 'Test text',
+      },
     });
+
     const form = instance.findByType('button');
     // Submit form
     act(() => {
@@ -110,20 +116,26 @@ describe('FormContainer: Send ', () => {
   });
 
   it('Contact form submit without lastname', () => {
-    act(() => {
-      for (let index = 0; index < textInputs.length; index++) {
-        const input = textInputs[index];
-        if (input.props.name !== 'lastname') {
-          input.props.onChange({
-            ...event,
-            target: {
-              name: input.props.name,
-              value: formData[input.props.name],
-            },
-          });
-        }
+    for (let index = 0; index < textInputs.length; index++) {
+      const input = textInputs[index];
+      if (input.props.name !== 'lastname') {
+        input.props.onChange({
+          ...event,
+          target: {
+            name: input.props.name,
+            value: formData[input.props.name],
+          },
+        });
       }
+    }
+    textArea.props.onChange({
+      ...event,
+      target: {
+        name: 'emailtext',
+        value: 'Test text',
+      },
     });
+
     const form = instance.findByType('button');
     // Submit form
     act(() => {
@@ -135,20 +147,26 @@ describe('FormContainer: Send ', () => {
   });
 
   it('Contact form submit without email', () => {
-    act(() => {
-      for (let index = 0; index < textInputs.length; index++) {
-        const input = textInputs[index];
-        if (input.props.name !== 'email') {
-          input.props.onChange({
-            ...event,
-            target: {
-              name: input.props.name,
-              value: formData[input.props.name],
-            },
-          });
-        }
+    for (let index = 0; index < textInputs.length; index++) {
+      const input = textInputs[index];
+      if (input.props.name !== 'email') {
+        input.props.onChange({
+          ...event,
+          target: {
+            name: input.props.name,
+            value: formData[input.props.name],
+          },
+        });
       }
+    }
+    textArea.props.onChange({
+      ...event,
+      target: {
+        name: 'emailtext',
+        value: 'Test text',
+      },
     });
+
     const form = instance.findByType('button');
     // Submit form
     act(() => {
@@ -160,20 +178,26 @@ describe('FormContainer: Send ', () => {
   });
 
   it('Contact form submit without phonenumber', () => {
-    act(() => {
-      for (let index = 0; index < textInputs.length; index++) {
-        const input = textInputs[index];
-        if (input.props.name !== 'phonenumber') {
-          input.props.onChange({
-            ...event,
-            target: {
-              name: input.props.name,
-              value: formData[input.props.name],
-            },
-          });
-        }
+    for (let index = 0; index < textInputs.length; index++) {
+      const input = textInputs[index];
+      if (input.props.name !== 'phonenumber') {
+        input.props.onChange({
+          ...event,
+          target: {
+            name: input.props.name,
+            value: formData[input.props.name],
+          },
+        });
       }
+    }
+    textArea.props.onChange({
+      ...event,
+      target: {
+        name: 'emailtext',
+        value: 'Test text',
+      },
     });
+
     const form = instance.findByType('button');
     // Submit form
     act(() => {
@@ -185,20 +209,34 @@ describe('FormContainer: Send ', () => {
   });
 
   it('Contact form submit with phonenumber wrong', () => {
-    act(() => {
-      for (let index = 0; index < textInputs.length; index++) {
-        const input = textInputs[index];
-        if (input.props.name === 'phonenumber') {
-          input.props.onChange({
-            ...event,
-            target: {
-              name: input.props.name,
-              value: '3214',
-            },
-          });
-        }
+    for (let index = 0; index < textInputs.length; index++) {
+      const input = textInputs[index];
+      if (input.props.name === 'phonenumber') {
+        input.props.onChange({
+          ...event,
+          target: {
+            name: input.props.name,
+            value: '3214',
+          },
+        });
+      } else {
+        input.props.onChange({
+          ...event,
+          target: {
+            name: input.props.name,
+            value: formData[input.props.name],
+          },
+        });
       }
+    }
+    textArea.props.onChange({
+      ...event,
+      target: {
+        name: 'emailtext',
+        value: 'Test text',
+      },
     });
+
     const form = instance.findByType('button');
     // Submit form
     act(() => {
@@ -210,82 +248,99 @@ describe('FormContainer: Send ', () => {
   });
 
   it('Contact form submit with phonenumber and email good', () => {
-    act(() => {
-      for (let index = 0; index < textInputs.length; index++) {
-        const input = textInputs[index];
-        if (input.props.name === 'phonenumber') {
-          input.props.onChange({
-            ...event,
-            target: {
-              name: input.props.name,
-              value: formData[input.props.name],
-            },
-          });
-        }
-        if (input.props.name === 'email') {
-          input.props.onChange({
-            ...event,
-            target: {
-              name: input.props.name,
-              value: formData[input.props.name],
-            },
-          });
-        }
+    for (let index = 0; index < textInputs.length; index++) {
+      const input = textInputs[index];
+      if (input.props.name === 'phonenumber') {
+        input.props.onChange({
+          ...event,
+          target: {
+            name: input.props.name,
+            value: formData[input.props.name],
+          },
+        });
+      } else if (input.props.name === 'email') {
+        input.props.onChange({
+          ...event,
+          target: {
+            name: input.props.name,
+            value: formData[input.props.name],
+          },
+        });
+      } else {
+        input.props.onChange({
+          ...event,
+          target: {
+            name: input.props.name,
+            value: formData[input.props.name],
+          },
+        });
       }
+    }
+    textArea.props.onChange({
+      ...event,
+      target: {
+        name: 'emailtext',
+        value: 'Test text',
+      },
     });
+
     const form = instance.findByType('button');
     // Submit form
     act(() => {
       form.props.onClick(event);
     });
-    expect(messageInputEm.props.errorMessage).toEqual(
-      `The field: 'email' has not the correct format`
-    );
-    expect(messageInputPn.props.errorMessage).toEqual(``);
+    expect(messageInputEm.props.errorMessage).toEqual('');
   });
 
   it('Contact form submit without emailtext', () => {
-    // act(() => {
-    //   for (let index = 0; index < textInputs.length; index++) {
-    //     const input = textInputs[index];
-    //     if (input.props.name !== 'emailtext') {
-    //       input.props.onChange({
-    //         ...event,
-    //         target: {
-    //           name: input.props.name,
-    //           value: formData[input.props.name],
-    //         },
-    //       });
-    //     }
-    //   }
-    //   messageInput.props.onChange({
-    //     ...event,
-    //     target: { name: 'firstname', value: 'Test message' },
-    //   });
-    // });
-    // const form = instance.findByType('button');
-    // // Submit form
-    // act(() => {
-    //   form.props.onClick(event);
-    // });
-    // expect(handleSubmitFormMock).toHaveBeenCalledTimes(0);
+    for (let index = 0; index < textInputs.length; index++) {
+      const input = textInputs[index];
+      input.props.onChange({
+        ...event,
+        target: {
+          name: input.props.name,
+          value: formData[input.props.name],
+        },
+      });
+    }
+
+    const form = instance.findByType('button');
+    // Submit form
+    act(() => {
+      form.props.onClick(event);
+    });
+    expect(messageInputEt.props.value).toEqual('');
   });
 
   it('Contact form submit with email wrong', () => {
-    act(() => {
-      for (let index = 0; index < textInputs.length; index++) {
-        const input = textInputs[index];
-        if (input.props.name === 'email') {
-          input.props.onChange({
-            ...event,
-            target: {
-              name: input.props.name,
-              value: 'testfail',
-            },
-          });
-        }
+    for (let index = 0; index < textInputs.length; index++) {
+      const input = textInputs[index];
+      if (input.props.name === 'email') {
+        input.props.onChange({
+          ...event,
+          target: {
+            name: input.props.name,
+            value: 'testfail',
+          },
+        });
+      } else {
+        input.props.onChange({
+          ...event,
+          target: {
+            name: input.props.name,
+            value: formData[input.props.name],
+          },
+        });
       }
+    }
+    textArea.props.onChange({
+      ...event,
+      target: {
+        name: 'emailtext',
+        value: 'Test text',
+      },
     });
+
     const form = instance.findByType('button');
     // Submit form
     act(() => {
@@ -297,50 +352,54 @@ describe('FormContainer: Send ', () => {
   });
 
   it('Contact form submit all right', () => {
-    act(() => {
-      for (let index = 0; index < textInputs.length; index++) {
-        const input = textInputs[index];
-        input.props.onChange({
-          ...event,
-          target: {
-            name: input.props.name,
-            value: formData[input.props.name],
-          },
-        });
-      }
-    });
-    act(() => {
-      // textArea.props.onChange({
-      //   ...event,
-      //   target: {
-      //     name: 'emailtext',
-      //     value: 'Test tex',
-      //   },
-      // });
-      console.log(textArea.props);
+    for (let index = 0; index < textInputs.length; index++) {
+      const input = textInputs[index];
+      input.props.onChange({
+        ...event,
+        target: {
+          name: input.props.name,
+          value: formData[input.props.name],
+        },
+      });
+    }
+    textArea.props.onChange({
+      ...event,
+      target: {
+        name: 'emailtext',
+        value: 'Test text',
+      },
     });
     const form = instance.findByType('button');
     // Submit form
     act(() => {
       form.props.onClick(event);
     });
-    console.log(messageInputEt.props.value);
+    expect(messageInputFn.props.errorMessage).toEqual('');
+    expect(messageInputLn.props.errorMessage).toEqual('');
+    expect(messageInputEm.props.errorMessage).toEqual('');
     expect(messageInputPn.props.errorMessage).toEqual('');
+    expect(messageInputEt.props.value).not.toEqual('');
   });
 
   it('Contact form submit without text', () => {
-    act(() => {
-      for (let index = 0; index < textInputs.length; index++) {
-        const input = textInputs[index];
-        input.props.onChange({
-          ...event,
-          target: {
-            name: input.props.name,
-            value: '',
-          },
-        });
-      }
+    for (let index = 0; index < textInputs.length; index++) {
+      const input = textInputs[index];
+      input.props.onChange({
+        ...event,
+        target: {
+          name: input.props.name,
+          value: '',
+        },
+      });
+    }
+    textArea.props.onChange({
+      ...event,
+      target: {
+        name: 'emailtext',
+        value: '',
+      },
     });
+
     const form = instance.findByType('button');
     // Submit form
     act(() => {
@@ -367,29 +426,27 @@ describe('FormContainer: Send ', () => {
   });
 
   it('Contact form submit with email and phonenumber wrong', () => {
-    act(() => {
-      for (let index = 0; index < textInputs.length; index++) {
-        const input = textInputs[index];
-        if (input.props.name === 'email') {
-          input.props.onChange({
-            ...event,
-            target: {
-              name: input.props.name,
-              value: 'email@',
-            },
-          });
-        }
-        if (input.props.name === 'phonenumber') {
-          input.props.onChange({
-            ...event,
-            target: {
-              name: input.props.name,
-              value: '31254',
-            },
-          });
-        }
+    for (let index = 0; index < textInputs.length; index++) {
+      const input = textInputs[index];
+      if (input.props.name === 'email') {
+        input.props.onChange({
+          ...event,
+          target: {
+            name: input.props.name,
+            value: 'email@',
+          },
+        });
+      } else if (input.props.name === 'phonenumber') {
+        input.props.onChange({
+          ...event,
+          target: {
+            name: input.props.name,
+            value: '31254',
+          },
+        });
       }
-    });
+    }
+
     const form = instance.findByType('button');
     // Submit form
     act(() => {
@@ -401,23 +458,34 @@ describe('FormContainer: Send ', () => {
   });
 
   it('Contact form submit with just email and phonenumber right', () => {
-    act(() => {
-      for (let index = 0; index < textInputs.length; index++) {
-        const input = textInputs[index];
-        if (
-          input.props.name !== 'email' ||
-          input.props.name !== 'phonenumber'
-        ) {
-          input.props.onChange({
-            ...event,
-            target: {
-              name: input.props.name,
-              value: '',
-            },
-          });
-        }
+    for (let index = 0; index < textInputs.length; index++) {
+      const input = textInputs[index];
+      if (input.props.name !== 'email' || input.props.name !== 'phonenumber') {
+        input.props.onChange({
+          ...event,
+          target: {
+            name: input.props.name,
+            value: '',
+          },
+        });
+      } else {
+        input.props.onChange({
+          ...event,
+          target: {
+            name: input.props.name,
+            value: formData[input.props.name],
+          },
+        });
       }
+    }
+    textArea.props.onChange({
+      ...event,
+      target: {
+        name: 'emailtext',
+        value: 'Test text',
+      },
     });
+
     const form = instance.findByType('button');
     // Submit form
     act(() => {
@@ -426,5 +494,37 @@ describe('FormContainer: Send ', () => {
     expect(messageInputEm.props.errorMessage).toEqual(
       `The field: 'email' has not the correct format`
     );
+  });
+  it('', () => {
+    messageInputFn.props.onChange({
+      ...event,
+      target: {
+        name: 'firstname',
+        value: 'Test text',
+      },
+    });
+    messageInputLn.props.onChange({
+      ...event,
+      target: {
+        name: 'lastname',
+        value: 'Test text 2',
+      },
+    });
+
+    //console.log(messageInputFn.props);
+
+    console.log(messageInputFn.props.value);
+    console.log(messageInputLn.props.value);
+    // console.log(messageInputEm.props.value);
+    // console.log(messageInputEt.props.value);
+
+    // const form = instance.findByType('button');
+    // // Submit form
+    // act(() => {
+    //   form.props.onClick(event);
+    // });
+    // expect(messageInputPn.props.errorMessage).toEqual(
+    //   `The field: 'phonenumber' has not the correct format`
+    // );
   });
 });
