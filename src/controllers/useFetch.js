@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import isoFetch from 'isomorphic-fetch';
 
 const useFetch = (url) => {
   const [dataNews, setDataNews] = useState([]);
@@ -6,7 +7,7 @@ const useFetch = (url) => {
 
   useEffect(() => {
     setFetchin(true);
-    fetch(url)
+    isoFetch(url)
       .then((res) => res.json())
       .then((data) => {
         setDataNews(data.articles);

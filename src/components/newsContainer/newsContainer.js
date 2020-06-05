@@ -8,7 +8,6 @@ const NewsContainer = (props) => {
   const [newsData, isLoading] = useFetch(
     `http://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=b9c5c16a422d4b7b90accf49eed04cbc`
   );
-
   return (
     <Panel>
       <Panel.Body>
@@ -16,7 +15,12 @@ const NewsContainer = (props) => {
         <Row>
           {Object.values(newsData).map((news, index) =>
             index < count ? (
-              <Col xs={12} sm={6} key={index}>
+              <Col
+                xs={12}
+                sm={6}
+                key={`article-${index}`}
+                data-testid="article"
+              >
                 <News
                   title={news.title}
                   image={news.urlToImage}
@@ -25,7 +29,7 @@ const NewsContainer = (props) => {
                 />
               </Col>
             ) : (
-              <Col xs={12}></Col>
+              <Col xs={12} key={`article-${index}`}></Col>
             )
           )}
         </Row>

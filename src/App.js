@@ -18,6 +18,8 @@ import './css/main.css';
 
 function App() {
   const [count, setCount] = useState(1);
+
+  const API = `http://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=b9c5c16a422d4b7b90accf49eed04cbc`;
   const handleClickShowMoreNew = (e) => {
     setCount(count + 1);
   };
@@ -30,7 +32,7 @@ function App() {
           <Notice />
           <h1>Top news</h1>
           <section className="news">
-            <NewsContainer count={count} />
+            <NewsContainer count={count} API={API} />
           </section>
           <section className="section-button">
             <Button color="primary" onClick={handleClickShowMoreNew}>

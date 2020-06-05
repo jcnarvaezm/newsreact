@@ -1,28 +1,31 @@
 import React from 'react';
-import { configure, mount, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import NewsContainer from './newsContainer';
+import { create, act } from 'react-test-renderer';
+import { articles } from '../../controllers/data';
+import isoFetch from 'isomorphic-fetch';
+import News from '../news';
 
-configure({
-  adapter: new Adapter(),
-});
+describe('Test de prueba', () => {
+  let instance;
+  let component;
 
-describe('Testing NewsContainer Component without count', () => {
-  let wrapper;
-  const count = 0;
-  it('Testing Rendering of NewsContainer', () => {
-    wrapper = shallow(<NewsContainer count={count} />);
-    expect(wrapper).not.toBeNull();
+  beforeAll(() => {
+    component = create(<NewsContainer count={1} />);
+    instance = component.root;
   });
-});
 
-describe('Testing NewsContainer Component', () => {
-  let wrapper;
-  const count = 1;
   beforeEach(() => {
-    wrapper = mount(<NewsContainer count={count} />);
+    isoFetch.__setValue(articles);
   });
-  it('Testing Rendering of NewsContainer showing the news list', () => {
-    expect(wrapper).not.toBeNull();
+
+  it('Algo ....', async (done) => {
+    await act(async () => {
+      await component.update(<NewsContainer count={1} />);
+    });
+
+    instance = component.root;
+    const articlesList = instance.findAllByType(News);
+    expect(articlesList.length).toEqual(4);
+    done();
   });
 });
