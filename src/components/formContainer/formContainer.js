@@ -12,7 +12,6 @@ const FormContainer = (props) => {
   const [formData, setFormData] = useState(InitialStateformData);
   const [message, setMessage] = useState({});
   let messageTem = {};
-  let validator = false;
   const handleChangeInput = (e) => {
     e.preventDefault();
     let inputName = e.target.name;
@@ -69,6 +68,7 @@ const FormContainer = (props) => {
   };
   const handleSubmitForm = (e) => {
     e.preventDefault();
+    let validator = false;
     inputValidator('firstname', formData.firstname);
     inputValidator('lastname', formData.lastname);
     inputValidator('phonenumber', formData.phonenumber);

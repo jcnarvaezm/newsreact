@@ -55,10 +55,12 @@ describe('FormContainer: Send ', () => {
   let form;
   let instance;
   let textInputs;
+  let textArea;
   let messageInputFn;
   let messageInputLn;
   let messageInputPn;
   let messageInputEm;
+  let messageInputEt;
 
   beforeEach(() => {
     act(() => {
@@ -74,10 +76,12 @@ describe('FormContainer: Send ', () => {
 
     // Get form inputs
     textInputs = form.findAllByType(TextField);
+    textArea = form.findAllByType('textarea');
     messageInputFn = form.findByProps({ name: 'firstname' });
     messageInputLn = form.findByProps({ name: 'lastname' });
     messageInputPn = form.findByProps({ name: 'phonenumber' });
     messageInputEm = form.findByProps({ name: 'email' });
+    messageInputEt = form.findByProps({ name: 'emailtext' });
   });
 
   it('Contact form submit without firstname', () => {
@@ -305,11 +309,22 @@ describe('FormContainer: Send ', () => {
         });
       }
     });
+    act(() => {
+      // textArea.props.onChange({
+      //   ...event,
+      //   target: {
+      //     name: 'emailtext',
+      //     value: 'Test tex',
+      //   },
+      // });
+      console.log(textArea.props);
+    });
     const form = instance.findByType('button');
     // Submit form
     act(() => {
       form.props.onClick(event);
     });
+    console.log(messageInputEt.props.value);
     expect(messageInputPn.props.errorMessage).toEqual('');
   });
 
