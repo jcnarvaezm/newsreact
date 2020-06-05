@@ -204,7 +204,7 @@ exports[`Testing Form Container renders form container correctly 1`] = `
                 </div>
               </div>
               <label>
-                Email
+                Email body
               </label>
             </div>
           </div>

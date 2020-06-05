@@ -156,7 +156,7 @@ const FormContainer = (props) => {
                       <p> {message.emailtext} </p>
                     </div>
                   </div>
-                  <label>Email</label>
+                  <label>Email body</label>
                 </div>
               </Col>
               <Col xs={12} className="field-section">

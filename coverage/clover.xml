@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1591368296933" clover="3.2.0">
-  <project timestamp="1591368296933" name="All files">
+<coverage generated="1591385837537" clover="3.2.0">
+  <project timestamp="1591385837537" name="All files">
     <metrics statements="130" coveredstatements="129" conditionals="37" coveredconditionals="36" methods="34" coveredmethods="34" elements="201" coveredelements="199" complexity="0" loc="130" ncloc="130" packages="12" files="25" classes="25"/>
     <package name="src">
       <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
@@ -25,57 +25,57 @@
       <file name="formContainer.js" path="D:\CondorTrabajoenCasa\newsreact\src\components\formContainer\formContainer.js">
         <metrics statements="52" coveredstatements="51" conditionals="14" coveredconditionals="13" methods="10" coveredmethods="10"/>
         <line num="11" count="4" type="stmt"/>
-        <line num="12" count="121" type="stmt"/>
-        <line num="13" count="121" type="stmt"/>
-        <line num="14" count="121" type="stmt"/>
-        <line num="15" count="121" type="stmt"/>
-        <line num="16" count="121" type="stmt"/>
-        <line num="17" count="44" type="stmt"/>
-        <line num="18" count="44" type="stmt"/>
-        <line num="19" count="44" type="stmt"/>
-        <line num="20" count="44" type="stmt"/>
-        <line num="24" count="44" type="cond" truecount="2" falsecount="0"/>
-        <line num="25" count="37" type="stmt"/>
-        <line num="30" count="44" type="cond" truecount="4" falsecount="0"/>
-        <line num="31" count="22" type="stmt"/>
-        <line num="34" count="121" type="stmt"/>
+        <line num="12" count="112" type="stmt"/>
+        <line num="13" count="112" type="stmt"/>
+        <line num="14" count="112" type="stmt"/>
+        <line num="15" count="112" type="stmt"/>
+        <line num="16" count="112" type="stmt"/>
+        <line num="17" count="30" type="stmt"/>
+        <line num="18" count="30" type="stmt"/>
+        <line num="19" count="30" type="stmt"/>
+        <line num="20" count="30" type="stmt"/>
+        <line num="24" count="30" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="22" type="stmt"/>
+        <line num="30" count="30" type="cond" truecount="4" falsecount="0"/>
+        <line num="31" count="18" type="stmt"/>
+        <line num="34" count="112" type="stmt"/>
         <line num="35" count="1" type="stmt"/>
-        <line num="40" count="121" type="stmt"/>
-        <line num="41" count="60" type="cond" truecount="2" falsecount="0"/>
-        <line num="42" count="51" type="stmt"/>
-        <line num="46" count="51" type="stmt"/>
+        <line num="40" count="112" type="stmt"/>
+        <line num="41" count="55" type="cond" truecount="2" falsecount="0"/>
+        <line num="42" count="46" type="stmt"/>
+        <line num="46" count="46" type="stmt"/>
         <line num="48" count="9" type="stmt"/>
         <line num="52" count="9" type="stmt"/>
-        <line num="55" count="121" type="stmt"/>
-        <line num="56" count="46" type="cond" truecount="2" falsecount="0"/>
-        <line num="57" count="27" type="stmt"/>
-        <line num="61" count="27" type="stmt"/>
-        <line num="63" count="19" type="stmt"/>
-        <line num="67" count="19" type="stmt"/>
-        <line num="70" count="121" type="stmt"/>
-        <line num="71" count="12" type="stmt"/>
-        <line num="72" count="12" type="stmt"/>
-        <line num="73" count="12" type="stmt"/>
-        <line num="74" count="12" type="stmt"/>
-        <line num="75" count="12" type="stmt"/>
-        <line num="76" count="12" type="stmt"/>
-        <line num="77" count="12" type="stmt"/>
-        <line num="78" count="12" type="stmt"/>
-        <line num="79" count="12" type="stmt"/>
-        <line num="80" count="12" type="stmt"/>
-        <line num="81" count="60" type="cond" truecount="2" falsecount="0"/>
-        <line num="82" count="53" type="stmt"/>
-        <line num="83" count="53" type="stmt"/>
-        <line num="86" count="12" type="stmt"/>
-        <line num="87" count="12" type="cond" truecount="1" falsecount="1"/>
+        <line num="55" count="112" type="stmt"/>
+        <line num="56" count="40" type="cond" truecount="2" falsecount="0"/>
+        <line num="57" count="24" type="stmt"/>
+        <line num="61" count="24" type="stmt"/>
+        <line num="63" count="16" type="stmt"/>
+        <line num="67" count="16" type="stmt"/>
+        <line num="70" count="112" type="stmt"/>
+        <line num="71" count="11" type="stmt"/>
+        <line num="72" count="11" type="stmt"/>
+        <line num="73" count="11" type="stmt"/>
+        <line num="74" count="11" type="stmt"/>
+        <line num="75" count="11" type="stmt"/>
+        <line num="76" count="11" type="stmt"/>
+        <line num="77" count="11" type="stmt"/>
+        <line num="78" count="11" type="stmt"/>
+        <line num="79" count="11" type="stmt"/>
+        <line num="80" count="11" type="stmt"/>
+        <line num="81" count="55" type="cond" truecount="2" falsecount="0"/>
+        <line num="82" count="49" type="stmt"/>
+        <line num="83" count="49" type="stmt"/>
+        <line num="86" count="11" type="stmt"/>
+        <line num="87" count="11" type="cond" truecount="1" falsecount="1"/>
         <line num="88" count="0" type="stmt"/>
-        <line num="99" count="12" type="stmt"/>
-        <line num="101" count="121" type="stmt"/>
+        <line num="99" count="11" type="stmt"/>
+        <line num="101" count="112" type="stmt"/>
         <line num="182" count="4" type="stmt"/>
-        <line num="183" count="109" type="stmt"/>
+        <line num="183" count="101" type="stmt"/>
         <line num="187" count="4" type="stmt"/>
         <line num="188" count="16" type="stmt"/>
-        <line num="199" count="12" type="stmt"/>
+        <line num="199" count="11" type="stmt"/>
       </file>
       <file name="formData.js" path="D:\CondorTrabajoenCasa\newsreact\src\components\formContainer\formData.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -179,19 +179,19 @@
       <file name="inputsController.js" path="D:\CondorTrabajoenCasa\newsreact\src\controllers\inputsController.js">
         <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="5" type="stmt"/>
-        <line num="2" count="62" type="cond" truecount="2" falsecount="0"/>
-        <line num="3" count="52" type="stmt"/>
+        <line num="2" count="57" type="cond" truecount="2" falsecount="0"/>
+        <line num="3" count="47" type="stmt"/>
         <line num="5" count="10" type="stmt"/>
       </file>
       <file name="regularExpresion.js" path="D:\CondorTrabajoenCasa\newsreact\src\controllers\regularExpresion.js">
         <metrics statements="9" coveredstatements="9" conditionals="7" coveredconditionals="7" methods="1" coveredmethods="1"/>
         <line num="1" count="5" type="stmt"/>
-        <line num="2" count="57" type="cond" truecount="3" falsecount="0"/>
-        <line num="4" count="26" type="cond" truecount="2" falsecount="0"/>
+        <line num="2" count="51" type="cond" truecount="3" falsecount="0"/>
+        <line num="4" count="23" type="cond" truecount="2" falsecount="0"/>
         <line num="5" count="11" type="stmt"/>
-        <line num="7" count="15" type="stmt"/>
-        <line num="11" count="27" type="cond" truecount="2" falsecount="0"/>
-        <line num="16" count="10" type="stmt"/>
+        <line num="7" count="12" type="stmt"/>
+        <line num="11" count="24" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="7" type="stmt"/>
         <line num="18" count="17" type="stmt"/>
         <line num="22" count="4" type="stmt"/>
       </file>
@@ -237,8 +237,8 @@
         <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="3" count="4" type="stmt"/>
         <line num="14" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="15" count="17" type="cond" truecount="3" falsecount="0"/>
-        <line num="17" count="12" type="stmt"/>
+        <line num="15" count="16" type="cond" truecount="3" falsecount="0"/>
+        <line num="17" count="11" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
         <line num="32" count="4" type="stmt"/>
       </file>
