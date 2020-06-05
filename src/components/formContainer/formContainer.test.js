@@ -289,6 +289,7 @@ describe('FormContainer: Send ', () => {
 
   it('Contact form submit all right', () => {
     act(() => {
+      console.log(messageInput.props);
       messageInput.props.onChange({
         ...event,
         target: { name: 'firstname', value: 'firstname' },

@@ -10,48 +10,28 @@ import { InitialStateformData } from './formData';
 
 const FormContainer = (props) => {
   const [formData, setFormData] = useState(InitialStateformData);
-  const [messageFirstname, setmessageFirstname] = useState('');
-  const [messageLastname, setmessageLastname] = useState('');
-  const [messageEmail, setmessageEmail] = useState('');
-  const [messagePhonenumber, setmessagePhonenumber] = useState('');
-  const [messageEmailtext, setmessageEmailtext] = useState('');
-
+  const [message, setMessage] = useState({});
+  let messageTem = {};
+  let validator = false;
   const handleChangeInput = (e) => {
     e.preventDefault();
+    let inputName = e.target.name;
+    let inputValue = e.target.value;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [inputName]: inputValue,
     });
     if (e.target.value) {
-      switch (e.target.name) {
-        case 'firstname':
-          setmessageFirstname('');
-          break;
-        case 'lastname':
-          setmessageLastname('');
-          break;
-        case 'email':
-          setmessageEmail('');
-          break;
-        case 'phonenumber':
-          setmessagePhonenumber('');
-          break;
-        default:
-          setmessageEmailtext('');
-          break;
-      }
+      setMessage({
+        ...message,
+        [inputName]: '',
+      });
     }
-    switch (e.target.name) {
-      case 'phonenumber':
-        validateRegularExpresion(e.target.name, e.target.value);
-        break;
-      default:
-        validateRegularExpresion(e.target.name, e.target.value);
-        break;
+    if (inputName === 'email' || inputName === 'phonenumber') {
+      validateRegularExpresion(inputName, inputValue);
     }
   };
   const hanleClickChkSendMe = (e) => {
-    e.preventDefault();
     setFormData({
       ...formData,
       chksendme: e.target.checked,
@@ -59,128 +39,63 @@ const FormContainer = (props) => {
   };
   const inputValidator = (inputName, inputData) => {
     if (inputsController(inputData)) {
-      switch (inputName) {
-        case 'firstname':
-          setmessageFirstname(
-            `The field: '${inputName}' has not the correct format`
-          );
-          break;
-        case 'lastname':
-          setmessageLastname(
-            `The field: '${inputName}' has not the correct format`
-          );
-          break;
-        case 'email':
-          setmessageEmail(
-            `The field: '${inputName}' has not the correct format`
-          );
-          break;
-        case 'phonenumber':
-          setmessagePhonenumber(
-            `The field: '${inputName}' has not the correct format`
-          );
-          break;
-        default:
-          setmessageEmailtext(
-            `The field: '${inputName}' has not the correct format`
-          );
-          break;
-      }
+      messageTem = {
+        ...messageTem,
+        [inputName]: `The field: '${inputName}' is required`,
+      };
       return true;
     } else {
-      switch (inputName) {
-        case 'firstname':
-          setmessageFirstname('');
-          break;
-        case 'lastname':
-          setmessageLastname('');
-          break;
-        case 'email':
-          setmessageEmail('');
-          break;
-        case 'phonenumber':
-          setmessagePhonenumber('');
-          break;
-        default:
-          setmessageEmailtext('');
-          break;
-      }
+      messageTem = {
+        ...messageTem,
+        [inputName]: '',
+      };
       return false;
     }
   };
   const validateRegularExpresion = (inputName, inputData) => {
     if (regularExpresion(inputName, inputData)) {
-      switch (inputName) {
-        case 'email':
-          setmessageEmail(
-            `The field: '${inputName}' has not the correct format`
-          );
-          break;
-        default:
-          setmessagePhonenumber(
-            `The field: '${inputName}' has not the correct format`
-          );
-          break;
-      }
+      messageTem = {
+        ...messageTem,
+        [inputName]: `The field: '${inputName}' has not the correct format`,
+      };
       return true;
     } else {
-      switch (inputName) {
-        case 'email':
-          setmessageEmail('');
-          break;
-        default:
-          setmessagePhonenumber('');
-          break;
-      }
+      messageTem = {
+        ...messageTem,
+        [inputName]: '',
+      };
       return false;
     }
   };
   const handleSubmitForm = (e) => {
     e.preventDefault();
-    let modalValidatorFirstName = inputValidator(
-      'firstname',
-      formData.firstname
-    );
-    let modalValidatorLasttName = inputValidator('lastname', formData.lastname);
-    let modalValidatorPhoneNumber = inputValidator(
-      'phonenumber',
-      formData.phonenumber
-    );
-    let modalValidatorEmail = inputValidator('email', formData.email);
-    let modalValidatorEmailText = inputValidator(
-      'emailtext',
-      formData.emailtext
-    );
-    let modalValidatorREEmail = validateRegularExpresion(
-      'email',
-      formData.email
-    );
-    let modalValidatorREPhoneNumber = validateRegularExpresion(
-      'phonenumber',
-      formData.phonenumber
-    );
-    if (
-      modalValidatorFirstName ||
-      modalValidatorLasttName ||
-      modalValidatorEmail ||
-      modalValidatorPhoneNumber ||
-      modalValidatorEmailText ||
-      modalValidatorREPhoneNumber ||
-      modalValidatorREEmail
-    ) {
-      return null;
+    inputValidator('firstname', formData.firstname);
+    inputValidator('lastname', formData.lastname);
+    inputValidator('phonenumber', formData.phonenumber);
+    inputValidator('email', formData.email);
+    inputValidator('emailtext', formData.emailtext);
+    validateRegularExpresion('email', formData.email);
+    validateRegularExpresion('phonenumber', formData.phonenumber);
+    setMessage(messageTem);
+    Object.values(messageTem).forEach((message) => {
+      if (message) {
+        validator = true;
+        return;
+      }
+    });
+    let info = InitialStateformData;
+    if (!validator) {
+      info = {
+        firstname: formData.firstname,
+        lastname: formData.lastname,
+        phonenumber: formData.phonenumber,
+        email: formData.email,
+        emailtext: formData.emailtext,
+        chksendme: formData.chksendme,
+        show: true,
+        showToast: false,
+      };
     }
-
-    const info = {
-      firstname: formData.firstname,
-      lastname: formData.lastname,
-      phonenumber: formData.phonenumber,
-      email: formData.email,
-      emailtext: formData.emailtext,
-      chksendme: formData.chksendme,
-      show: true,
-      showToast: false,
-    };
     props.send(info);
   };
   return (
@@ -192,7 +107,7 @@ const FormContainer = (props) => {
             <Row>
               <Col xs={12} sm={6} className="field-section">
                 <TextField
-                  errorMessage={messageFirstname}
+                  errorMessage={message.firstname}
                   label="First name"
                   onChange={handleChangeInput}
                   name="firstname"
@@ -205,7 +120,7 @@ const FormContainer = (props) => {
                   onChange={handleChangeInput}
                   name="lastname"
                   value={formData.lastname}
-                  errorMessage={messageLastname}
+                  errorMessage={message.lastname}
                 />
               </Col>
               <Col xs={12} sm={6} className="field-section">
@@ -214,7 +129,7 @@ const FormContainer = (props) => {
                   onChange={handleChangeInput}
                   name="email"
                   value={formData.email}
-                  errorMessage={messageEmail}
+                  errorMessage={message.email}
                 />
               </Col>
               <Col xs={12} sm={6} className="field-section">
@@ -225,7 +140,7 @@ const FormContainer = (props) => {
                   maxLength="10"
                   name="phonenumber"
                   value={formData.phonenumber}
-                  errorMessage={messagePhonenumber}
+                  errorMessage={message.phonenumber}
                 />
               </Col>
               <Col xs={12} className="field-section">
@@ -237,6 +152,9 @@ const FormContainer = (props) => {
                       name="emailtext"
                       value={formData.emailtext}
                     ></textarea>
+                    <div className="invalid">
+                      <p> {message.emailtext} </p>
+                    </div>
                   </div>
                   <label>Email</label>
                 </div>
